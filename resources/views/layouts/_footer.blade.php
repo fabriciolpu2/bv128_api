@@ -6,7 +6,7 @@
             <div class="row justify-content-between">
                 <div class="col-lg-3 mb-3 mb-lg-0">
                     <div data-aos="fade-right" class="footer-nav-wrap">
-                        <img src="images/logo.png" alt="footer logo" width="120" class="img-fluid mb-3">
+                        <img src="images/logo-canaime.png" alt="footer logo" width="120" class="img-fluid mb-3">
                         <p>
                             Atendimento de segunda a sexta, das 8h às 18h. Para clientes com contrato vigente, temos
                             atendimento 24 horas.
@@ -17,13 +17,13 @@
                     <div data-aos="fade-down" class="footer-nav-wrap">
                         <h5 class="mb-6">Contatos</h5>
                         <ul class="list-unstyled">
-                            @foreach ($filiais as $filial)
+
                                 <li class="mb-2"><span class="ti-arrow-circle-right mr-2"></span>
-                                    {{$filial->nome}} |
-                                    <a href="tel:+55{{$filial->contato_1}}"> {{$filial->contato_1}}</a> |
-                                    <a href="mailto:{{$filial->email}}"> {{$filial->email}}</a>
+                                    Studio Canaime - BVB |
+                                    <a href="tel:+55999999999"> 99999-9999</a> |
+                                    <a href="mailto:mail@mail.com"> mail@mail.com</a>
                                 </li>
-                            @endforeach
+
 
                         </ul>
                     </div>
@@ -34,19 +34,7 @@
                         <ul class="list-unstyled">
                             <li class="mb-2">
                                 <i class="ti-arrow-circle-right mr-2"></i>
-                                <a href="#servicos">Soluções e Serviços</a>
-                            </li>
-                            <li class="mb-2">
-                                <i class="ti-arrow-circle-right mr-2"></i>
-                                <a href="#time">Especialistas</a>
-                            </li>
-                            <li class="mb-2">
-                                <i class="ti-arrow-circle-right mr-2"></i>
-                                <a href="#clients">Nossos clientes</a>
-                            </li>
-                            <li class="mb-2">
-                                <i class="ti-arrow-circle-right mr-2"></i>
-                                <a href="#zafaz">ZAFAZ</a>
+                                <a href="#zafaz">Studio Canaimé</a>
                             </li>
                         </ul>
                     </div>

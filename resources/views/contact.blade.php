@@ -18,7 +18,7 @@
                 <contact-us-form></contact-us-form>
                 <p class="form-message"></p>
             </div>
-            <div class="col-md-5">
+            {{-- <div class="col-md-5">
                 <div class="contact-info-wrap">
                     <ul class="list-creative">
                         @foreach ($filiais as $filial)
@@ -32,7 +32,7 @@
 
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
