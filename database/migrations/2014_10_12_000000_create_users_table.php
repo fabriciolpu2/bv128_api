@@ -23,12 +23,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-
-        User::firstOrCreate([
-            'name' => 'Administrador',
-            'email' => 'admin@amplomed.com',
-            'password' => bcrypt($password = 'amplomed'),
-        ]);
+       
     }
 
     /**
