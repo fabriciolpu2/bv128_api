@@ -23,9 +23,12 @@ use App\User;
 // Registration Routes...
 // Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('admin/register', 'Auth\RegisterController@register');
+Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
+    Route::get('/', 'WelcomeController@welcome')->name('welcome');
 
-Route::get('/', 'WelcomeController@welcome')->name('welcome');
+});
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function () {
 

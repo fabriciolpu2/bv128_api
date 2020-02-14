@@ -12,13 +12,28 @@ const mix = require('laravel-mix');
  */
 
 
-//** Telas do site */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// mix.js('resources/js/app.js', 'public/js')
+//     .sass('resources/sass/app.scss', 'public/css');
 
 mix.copyDirectory('resources/admin/img', 'public/admin/images');
 
+//** Telas do site */
+
+mix.css(
+    [
+        "resources/cliente/css/nucleo-icons.css",
+        "resources/cliente/css/blk-design-system-pro.css",
+        // "resources/cliente/css/",
+        // "resources/cliente/css/"
+    ],
+    "public/cliente/css/app.css"
+);
+
+mix.js("resources/cliente/js/core/jquery.min.js", "public/cliente/js/")
+    .js("resources/cliente/js/core/popper.min.js", "public/cliente/js/")
+    .js("resources/cliente/js/core/bootstrap.min.js", "public/cliente/js/")
+    .js("resources/cliente/js/plugins/perfect-scrollbar.jquery.min.js", "public/cliente/js/");
 
 
 /** Teste de dashboard */
