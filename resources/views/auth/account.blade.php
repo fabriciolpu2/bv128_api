@@ -1,5 +1,5 @@
 
-@extends('layouts.dashboard.app')
+@extends('admin.layouts.dashboard.app')
 
 @section('content')
 <!-- Page-Title -->
@@ -90,7 +90,7 @@
 
 							<div class="form-group row">
 								<div class="col-md-6 col-md-offset-4">
-									<button type="submit" class="btn btn-dark block"
+									<button type="submit" class="btn btn-purple block"
                                     type="submit">
                                     {{ __('labels.Update') }}
                                 </button>

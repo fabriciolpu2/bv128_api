@@ -89,7 +89,7 @@ class FilialController extends Controller
                 ->toMediaCollection('images');
         }
 
-        return redirect('/backend/filiais')->with(['success' => 'Successfully created service']);
+        return redirect('/admin/filiais')->with(['success' => 'Successfully created service']);
     }
 
     /**
@@ -154,7 +154,7 @@ class FilialController extends Controller
 
         $filial->update($request->except(['image']));
 
-        return redirect('/backend/filiais')->with(['success' => 'Event updated successfully']);
+        return redirect('/admin/filiais')->with(['success' => 'Event updated successfully']);
     }
 
     /**

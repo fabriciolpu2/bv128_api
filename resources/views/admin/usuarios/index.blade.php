@@ -10,7 +10,7 @@
                 Usuários
                 ({{ $usuarios->total()}})
 			</h4>
-            <a href="{{ route('usuarios.create') }}" class="pull-right btn btn-danger w-md waves-effect waves-light mb-4">
+            <a href="{{ route('usuarios.create') }}" class="pull-right btn btn-purple w-md waves-effect waves-light mb-4">
                     <i class="mdi mdi-plus-circle"></i>
                     Novo usuário
                 </a>

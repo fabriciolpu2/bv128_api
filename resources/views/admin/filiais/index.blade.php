@@ -41,7 +41,7 @@
                             </a>
 
 
-                            <a href="/backend/filiais/{{$filial->id}}/destroy" class="dropdown-item">
+                            <a href="/admin/filiais/{{$filial->id}}/destroy" class="dropdown-item">
                                 Deletar
                             </a>
 

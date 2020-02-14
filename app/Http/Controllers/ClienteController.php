@@ -75,7 +75,7 @@ class ClienteController extends Controller
                 ->toMediaCollection('images');
         }
 
-        return redirect('/backend/clientes')->with(['success' => 'Successfully created client']);
+        return redirect('/admin/clientes')->with(['success' => 'Successfully created client']);
     }
 
     /**
@@ -140,7 +140,7 @@ class ClienteController extends Controller
 
         $cliente->update($request->except(['image']));
 
-        return redirect('/backend/clientes')->with(['success' => 'Event updated successfully']);
+        return redirect('/admin/clientes')->with(['success' => 'Event updated successfully']);
     }
 
     /**

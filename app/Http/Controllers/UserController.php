@@ -65,7 +65,7 @@ class UserController extends Controller
             $q->whereIn('name', ['administrador', 'editor']);
         })->latest()->paginate();
 
-        return redirect('/backend/usuarios/');
+        return redirect('/admin/usuarios/');
     }
 
     /**
@@ -113,7 +113,7 @@ class UserController extends Controller
             $q->whereIn('name', ['administrador', 'editor']);
         })->latest()->paginate();
 
-        return redirect('/backend/usuarios/');
+        return redirect('/admin/usuarios/');
 
     }
 

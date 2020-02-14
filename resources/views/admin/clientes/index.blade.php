@@ -41,7 +41,7 @@
                             </a>
 
 
-                            <a href="/backend/clientes/{{$cliente->id}}/destroy" class="dropdown-item">
+                            <a href="/admin/clientes/{{$cliente->id}}/destroy" class="dropdown-item">
                                 Deletar
                             </a>
 

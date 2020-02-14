@@ -2,7 +2,7 @@
 $ano = date ("Y");
 return [
 
-    'color' => 'danger',
+    'color' => 'dark',
     'anoSite' => $ano,
     /*
     |--------------------------------------------------------------------------
@@ -164,7 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        
+
 
         /*
          * Package Service Providers...

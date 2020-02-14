@@ -43,7 +43,7 @@ export default {
             formData.append("usuario", this.user.id);
 
             axios
-                .post("/backend/bloquear", formData)
+                .post("/admin/bloquear", formData)
                 .then(result => {
                     if (this.isBlocked != result.data.bloqueado) {
                         this.isBlocked = result.data.bloqueado;

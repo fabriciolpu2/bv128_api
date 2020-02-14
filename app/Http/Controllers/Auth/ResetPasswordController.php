@@ -25,5 +25,5 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/backend/servicos';
+    protected $redirectTo = '/admin/servicos';
 }

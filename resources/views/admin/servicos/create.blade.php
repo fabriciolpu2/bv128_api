@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.app')
+@extends('admin.layouts.dashboard.app')
 @section('content')
     <div class="row m-t-50">
         <div class="col-lg-12">

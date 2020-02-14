@@ -1,9 +1,9 @@
-@extends('layouts.dashboard.app')
+@extends('admin.layouts.dashboard.app')
 
 @section('content')
 
 <!-- Begin page -->
-<div class="accountbg bg-danger"></div>
+<div class="accountbg bg-dark"></div>
 
 <div class="wrapper-page account-page-full">
 
@@ -13,29 +13,14 @@
             <div class="account-box">
 
                 <div class="card-box">
-                    <h2 class="text-center pb-4">
+                    <h2 class="text-uppercase text-center pb-4">
                         <a href="/" class="text-dark">
-                            <span><img src="/images/logo.png" alt="" height="26"></span>
+                            <span><img src="/images/logo-canaime.png" alt="" height="40"></span>
                         </a>
                     </h2>
 
-                    <form method="POST" class="form-horizontal" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <div class="form-group row m-b-20">
-                            <div class="col-12">
-                                <label for="name">{{ __('labels.FullName') }}</label>
-                                <input id="name" type="text"
-                                    class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                                    value="{{ old('name') }}" required autofocus
-                                    placeholder="{{ __('placeholders.FullName') }}">
-                                @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group row m-b-20">
                             <div class="col-12">
@@ -43,7 +28,7 @@
 
                                 <input id="email" type="email"
                                     class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                    value="{{ old('email') }}" required placeholder="{{ __('placeholders.Email') }}">
+                                    value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
@@ -56,9 +41,17 @@
                         <div class="form-group row m-b-20">
                             <div class="col-12">
                                 <label for="password">{{ __('labels.Password') }}</label>
+
+                                @if (Route::has('password.request'))
+                                <a class="text-muted pull-right" href="{{ route('password.request') }}">
+                                    <small>{{ __('messages.Forgot Your Password?') }}</small>
+                                </a>
+                                @endif
+
                                 <input id="password" type="password"
                                     class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                    name="password" required placeholder="{{ __('placeholders.Password') }}">
+                                    name="password" required>
+
                                 @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -69,29 +62,32 @@
 
                         <div class="form-group row m-b-20">
                             <div class="col-12">
-                                <label for="password-confirm">{{ __('labels.ConfirmPassword') }}</label>
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required
-                                    placeholder="{{ __('placeholders.ConfirmPassword') }}">
+                                <div class="checkbox checkbox-custom">
+                                    <input type="checkbox" name="remember" id="remember"
+                                        {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('messages.Remember Me') }}
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row text-center m-t-10">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-block btn-custom waves-effect waves-light btn-danger"
-                                    type="submit">
-                                    {{ __('labels.Register') }}
+                                <button type="submit" class="btn btn-block btn-purple waves-effect waves-light">
+                                    {{ __('Login') }}
                                 </button>
                             </div>
                         </div>
                     </form>
 
-                    <div class="row m-t-10">
+                    {{-- <div class="row m-t-10">
                         <div class="col-sm-12 text-center">
-                            <p class="text-muted">{{ __('labels.AlreadyHas') }} <a href="{{route('login')}}"
-                                    class="text-dark m-l-5"><b>{{ __('labels.Enter') }}</b></a></p>
+                            <p class="text-muted">{{ __('labels.NewtoHere') }} <a href="{{route('register')}}"
+                                    class="text-dark m-l-5"><b>{{ __('labels.SingUp') }}</b></a></p>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="text-center m-t-20">
                         <p>{{ __('labels.Year') }} © {{config('app.name') }}</p>
@@ -102,8 +98,7 @@
 
         </div>
     </div>
+
 </div>
-
-
 
 @endsection

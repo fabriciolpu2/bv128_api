@@ -80,7 +80,7 @@ class ServicoController extends Controller
         Servico::create($request->all());
 
 
-        return redirect('/backend/servicos')->with(['success' => 'Successfully created service']);
+        return redirect('/admin/servicos')->with(['success' => 'Successfully created service']);
     }
 
     /**
@@ -138,7 +138,7 @@ class ServicoController extends Controller
 
         $servico->update($request->all());
 
-        return redirect('/backend/servicos')->with(['success' => 'Updated successfully']);
+        return redirect('/admin/servicos')->with(['success' => 'Updated successfully']);
     }
 
     /**

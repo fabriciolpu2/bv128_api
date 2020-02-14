@@ -6,8 +6,8 @@
             <!-- Logo container-->
             <div class="logo">
                 <a href="{{ route('welcome') }}" class="logo">
-                    <span class="logo-small"><img src="/images/logo_2.png" alt="" height="26"></span>
-                    <span class="logo-large"><img src="/images/logo_2.png" alt="" height="26"></span>
+                    <span class="logo-small"><img src="/admin/images/logo-canaime.png" alt="" height="26"></span>
+                    <span class="logo-large"><img src="/admin/images/logo-canaime.png" alt="" height="26"></span>
                 </a>
             </div>
             <!-- End Logo container-->
@@ -36,12 +36,12 @@
                             </a>
 
                             <!-- item-->
-                            <a href="{{ url('/backend/logout') }}" class="dropdown-item notify-item"
+                            <a href="{{ url('/admin/logout') }}" class="dropdown-item notify-item"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fi-power"></i> <span>{{__('labels.Logout')}}</span>
                             </a>
 
-                            <form id="logout-form" action="{{ url('/backend/logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
 

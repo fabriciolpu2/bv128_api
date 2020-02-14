@@ -34,7 +34,7 @@ class HomeController extends Controller
     {
         $servicos = $status !== null ? Servico::where('ativo', $status)->paginate(8) : Servico::paginate(8);
 
-        return view('servicos.index', compact('servicos', 'status'));
+        return view('admin.servicos.index', compact('servicos', 'status'));
     }
 
     /**
@@ -78,7 +78,7 @@ class HomeController extends Controller
      */
     public function showChangePasswordForm()
     {
-        return view('auth.passwords.change-password');
+        return view('admin.auth.passwords.change-password');
     }
 
     /**

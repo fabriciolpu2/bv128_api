@@ -1,5 +1,5 @@
 
-@extends('layouts.dashboard.app')
+@extends('admin.layouts.dashboard.app')
 
 @section('content')
 
@@ -75,7 +75,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-dark block">
+                                    <button type="submit" class="btn btn-purple block">
                                         Alterar Senha
                                     </button>
                                     <a href="{{route('my.account.get')}}" class="btn btn-danger block">Go Back</a>

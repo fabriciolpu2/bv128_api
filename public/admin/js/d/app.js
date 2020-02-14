@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1874,7 +1874,7 @@ __webpack_require__.r(__webpack_exports__);
       this.isBlocked = !this.isBlocked;
       var formData = new FormData();
       formData.append("usuario", this.user.id);
-      axios.post("/backend/bloquear", formData).then(function (result) {
+      axios.post("/admin/bloquear", formData).then(function (result) {
         if (_this.isBlocked != result.data.bloqueado) {
           _this.isBlocked = result.data.bloqueado;
         }
@@ -49630,26 +49630,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/admin/sass/dashboard/app.scss":
-/*!*************************************************!*\
-  !*** ./resources/admin/sass/dashboard/app.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*********************************************************************************************!*\
-  !*** multi ./resources/admin/js/dashboard/app.js ./resources/admin/sass/dashboard/app.scss ***!
-  \*********************************************************************************************/
+/***/ 1:
+/*!***************************************************!*\
+  !*** multi ./resources/admin/js/dashboard/app.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\PMBV-163993\Projetos\Laravel\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
-module.exports = __webpack_require__(/*! C:\Users\PMBV-163993\Projetos\Laravel\canaime\resources\admin\sass\dashboard\app.scss */"./resources/admin/sass/dashboard/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\kamie\Documents\projetos\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
 
 
 /***/ })

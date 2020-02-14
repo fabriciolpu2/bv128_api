@@ -84,13 +84,13 @@
     @endif
     <!-- Scripts -->
     <!-- Scripts -->
-    <script src="{{ mix('admin/js/d/app.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    {{-- <script src="{{ mix('admin/js/d/app.js') }}"></script>
     <script src="{{ mix('admin/js/d/jquery.slimscroll.js') }}"></script>
-    <script src="{{ mix('admin/js/d/jquery.app.js') }}"></script>
-    {!!Theme::js('admin/js/d/app.js')!!} 
-    {!!Theme::js('admin/js/d/jquery.slimscroll.js')!!} 
-    {!!Theme::js('admin/js/d/jquery.app.js')!!} 
+    <script src="{{ mix('admin/js/d/jquery.app.js') }}"></script> --}}
+    {!!Theme::js('admin/js/d/app.js')!!}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    {!!Theme::js('admin/js/d/jquery.slimscroll.js')!!}
+    {!!Theme::js('admin/js/d/jquery.app.js')!!}
     @yield('js')
 </body>
 

@@ -14,8 +14,8 @@ const mix = require('laravel-mix');
 
 //** Telas do site */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/admin/js/app.js', 'public/js')
+    .sass('resources/admin/sass/app.scss', 'public/css');
 
 mix.copyDirectory('resources/admin/img', 'public/admin/images');
 

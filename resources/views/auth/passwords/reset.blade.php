@@ -1,7 +1,7 @@
-@extends('layouts.dashboard.app')
+@extends('admin.layouts.dashboard.app')
 
 @section('content')
-<div class="accountbg bg-danger"></div>
+<div class="accountbg bg-dark"></div>
 
 <div class="wrapper-page account-page-full">
 
@@ -13,7 +13,7 @@
                 <div class="card-box p-5">
                     <h2 class="text-uppercase text-center pb-4">
                         <a href="/" class="text-dark">
-                            <span><img src="/images/logo.png" alt="" height="40"></span>
+                            <span><img src="/images/logo-canaime.png" alt="" height="40"></span>
                         </a>
                     </h2>
                     <div class="text-center m-b-20">
