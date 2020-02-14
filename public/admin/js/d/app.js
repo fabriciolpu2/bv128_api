@@ -81,7 +81,11 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+>>>>>>> 12889cd6ac33039c12dbbc9653201c30da0dc16b
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -49630,14 +49634,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 1:
+=======
+/***/ 4:
+>>>>>>> 12889cd6ac33039c12dbbc9653201c30da0dc16b
 /*!***************************************************!*\
   !*** multi ./resources/admin/js/dashboard/app.js ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\kamie\Documents\projetos\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\PMBV-163993\Projetos\Laravel\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
+>>>>>>> 12889cd6ac33039c12dbbc9653201c30da0dc16b
 
 
 /***/ })
