@@ -13,45 +13,27 @@
 
 use App\User;
 
-Route::get('/', 'WelcomeController@welcome')->name('welcome');
-
-Route::get('/contato', 'HomeController@contact')->name('contato');
-
-Route::post('/contato', 'HomeController@sendMessage')->name('contato.form');
 
 
-Route::get('/user-create', function () {
-    User::firstOrCreate([
-        'name' => 'Admin',
-        'email' => 'adm.site@amplomed.com.br',
-        'password' => bcrypt($password = 'amplomed'),
-    ]);
-
-    echo 'feito melhor que perfeito';
-});
-
-// Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //Auth::routes();
 
-// Authentication Routes...
-Route::get('backend/login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
-Route::post('backend/login', ['as' => 'login', 'uses' => 'Auth\LoginController@login']);
-Route::post('backend/logout', 'Auth\LoginController@logout')->name('logout');
+
 
 // Registration Routes...
-// Route::get('backend/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('backend/register', 'Auth\RegisterController@register');
-
-Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
+// Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+// Route::post('admin/register', 'Auth\RegisterController@register');
 
 
+Route::get('/', 'WelcomeController@welcome')->name('welcome');
 
+Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function () {
 
+    Route::get('/welcome', 'WelcomeController@welcome')->name('welcome');
+    // Authentication Routes...
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Auth\LoginController@login')->name('loginpost');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -67,6 +49,9 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
 
     Route::post('/my-account', 'HomeController@myAccount')
         ->name('my.account.post');
+
+
+    // --------------------------------------------------- 
 
     Route::get('servicos', 'ServicoController@index')
         ->name('servicos.index');
@@ -145,7 +130,30 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.'], function () {
     Route::get('usuarios/{id}/destroy', 'UserController@destroy')
         ->middleware(['auth', 'role:desenvolvedor|administrador'])
         ->name('usuarios.destroy');
+
     Route::post('bloquear', 'UserController@bloquear')
         ->middleware(['auth', 'role:desenvolvedor|administrador'])
         ->name('bloquear');
 });
+
+
+Route::get('/contato', 'HomeController@contact')->name('contato');
+
+Route::post('/contato', 'HomeController@sendMessage')->name('contato.form');
+
+
+// Route::get('/user-create', function () {
+//     User::firstOrCreate([
+//         'name' => 'Admin',
+//         'email' => 'adm.site@amplomed.com.br',
+//         'password' => bcrypt($password = 'amplomed'),
+//     ]);
+
+//     echo 'feito melhor que perfeito by Joao Clineu';
+// });
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

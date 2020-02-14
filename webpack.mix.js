@@ -11,61 +11,63 @@ const mix = require('laravel-mix');
  |
  */
 
+
+//** Telas do site */
+
 mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css');
 
-mix.copyDirectory('resources/img', 'public/images');
+mix.copyDirectory('resources/admin/img', 'public/admin/images');
 
 
 
-/**
- * Teste de dashboard
- */
+/** Teste de dashboard */
 
-mix.js("resources/js/dashboard/app.js", "public/js/d")
-    .js("resources/js/dashboard/modernizr.min.js", "public/js/d")
-    .js("resources/js/dashboard/jquery.app.js", "public/js/d")
-    .js("resources/js/dashboard/jquery.slimscroll.js", "public/js/d")
-    .sass("resources/sass/dashboard/app.scss", "public/css/d");
+mix.js("resources/admin/js/dashboard/app.js", "public/admin/js/d")
+    .js("resources/admin/js/dashboard/modernizr.min.js", "public/admin/js/d")
+    .js("resources/admin/js/dashboard/jquery.app.js", "public/admin/js/d")
+    .js("resources/admin/js/dashboard/jquery.slimscroll.js", "public/admin/js/d")
+    .sass("resources/admin/sass/dashboard/app.scss", "public/admin/css/d");
 
 mix.styles(
     [
-        "resources/css/dashboard/bootstrap.min.css",
-        "resources/css/dashboard/style.css",
-        "resources/css/dashboard/print.css",
-        "resources/css/dashboard/icons.css"
+        "resources/admin/css/dashboard/bootstrap.min.css",
+        "resources/admin/css/dashboard/style.css",
+        "resources/admin/css/dashboard/print.css",
+        "resources/admin/css/dashboard/icons.css"
     ],
-    "public/css/d/schedule.css"
+    "public/admin/css/d/schedule.css"
 );
 
 mix.styles(
     [
-        "resources/css/dashboard/dataTables.bootstrap4.min.css",
-        "resources/css/dashboard/buttons.bootstrap4.min.css",
-        "resources/css/dashboard/responsive.bootstrap4.min.css"
+        "resources/admin/css/dashboard/dataTables.bootstrap4.min.css",
+        "resources/admin/css/dashboard/buttons.bootstrap4.min.css",
+        "resources/admin/css/dashboard/responsive.bootstrap4.min.css"
     ],
-    "public/css/d/datatable.min.css"
+    "public/admin/css/d/datatable.min.css"
 );
 
 mix.scripts(
     [
-        "resources/js/dashboard/jquery.dataTables.min.js",
-        "resources/js/dashboard/dataTables.bootstrap4.min.js",
-        "resources/js/dashboard/dataTables.buttons.min.js",
-        "resources/js/dashboard/buttons.bootstrap4.min.js",
+        "resources/admin/js/dashboard/jquery.dataTables.min.js",
+        "resources/admin/js/dashboard/dataTables.bootstrap4.min.js",
+        "resources/admin/js/dashboard/dataTables.buttons.min.js",
+        "resources/admin/js/dashboard/buttons.bootstrap4.min.js",
     ],
-    "public/js/d/datatable.min.js"
+    "public/admin/js/d/datatable.min.js"
 );
 
 mix.copy(
-    "resources/css/dashboard/plugins/jquery.steps.css",
-    "public/css/d/plugins"
-);
-mix.copy(
-    "resources/css/dashboard/plugins/magnific-popup.css",
-    "public/css/d/plugins"
+    "resources/admin/css/dashboard/plugins/jquery.steps.css",
+    "public/admin/css/d/plugins"
 );
 
-mix.copy("resources/fonts/*", "public/fonts");
+mix.copy(
+    "resources/admin/css/dashboard/plugins/magnific-popup.css",
+    "public/admin/css/d/plugins"
+);
+
+mix.copy("resources/admin/fonts/*", "public/admin/fonts");
 
 mix.version();
