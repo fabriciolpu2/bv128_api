@@ -86,7 +86,7 @@
                     <i class="tim-icons icon-light-3"></i> Project 3
                 </a>
             </li>
-          
+
         </ul>
         <div class="tab-content tab-space">
             <div class="tab-pane active" id="project1">
@@ -108,14 +108,14 @@
                                         </div>
                                     </div>
                                     <div class="author">
-                                        <img src="assets/img/Tim.png" alt="..." class="avatar img-raised">
+                                        {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
                                         <span>Material Kit</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="col-md-4">
                         <div class="card card-blog">
                             <div class="card-image h-auto">
@@ -127,7 +127,7 @@
                                         <i class="tim-icons icon-heart-2 text-danger"></i> 127
                                     </div>
                                     <div class="author">
-                                        <img src="assets/img/Tim.png" alt="..." class="avatar img-raised">
+                                        {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
                                         <span>Argon Dashboard Pro</span>
                                     </div>
                                 </div>

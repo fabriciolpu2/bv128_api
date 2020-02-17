@@ -11,6 +11,7 @@
 
     <title>{{ config('app.name', 'Canaime Studio') }}</title>
 
+    <script src="{{ mix('js/app.js') }}"></script>
 
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -22,15 +23,15 @@
 </head>
 
 <body>
-    @include('layouts/_header')
+    @include('cliente.layouts/_header')
 
     <div id="app" class="main">
         @yield('content')
     </div>
 
-    @include('layouts/_footer')
+    @include('cliente.layouts/_footer')
 </body>
-
+<script src="{{ mix('js/app.js') }}" defer></script>
 <script src="{{ mix('cliente/js/jquery.min.js') }}"></script>
 <script src="{{ mix('cliente/js/popper.min.js') }}"></script>
 <script src="{{ mix('cliente/js/bootstrap.min.js') }}"></script>

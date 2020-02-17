@@ -44,9 +44,8 @@ class HomeController extends Controller
      */
     public function contact()
     {
-        $filiais = Filial::orderBy('ordem')->get();
 
-        return view('contact', compact('filiais'));
+        return view('cliente.contact');
     }
 
     public function sendMessage(Request $request)

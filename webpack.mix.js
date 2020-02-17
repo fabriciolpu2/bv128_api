@@ -86,5 +86,6 @@ mix.copy(
 );
 
 mix.copy("resources/admin/fonts/*", "public/admin/fonts");
+mix.copy("resources/cliente/fonts/*", "public/cliente/fonts");
 
 mix.version();

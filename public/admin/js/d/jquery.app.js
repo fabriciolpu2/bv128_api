@@ -81,11 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
-=======
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
->>>>>>> 12889cd6ac33039c12dbbc9653201c30da0dc16b
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -227,11 +223,7 @@
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 3:
-=======
-/***/ 6:
->>>>>>> 12889cd6ac33039c12dbbc9653201c30da0dc16b
+/***/ 7:
 /*!**********************************************************!*\
   !*** multi ./resources/admin/js/dashboard/jquery.app.js ***!
   \**********************************************************/

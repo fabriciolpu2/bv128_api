@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('cliente.layouts.app')
 
 @section('content')
 <section class="contact-us-section ptb-100">
