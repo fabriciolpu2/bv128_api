@@ -17,17 +17,6 @@ class WelcomeController extends Controller
      */
     public function welcome()
     {
-        $clientes = Cliente::all();
-
-        // $servicos = Servico::all()->where('titulo', 'not like', '%ZAFAZ%');
-        $servicos = Servico::where('titulo', 'not like', '%'.Servico::ZAFAZ.'%')->where('superior_id', null)->get();
-
-        $zafaz = Servico::where('titulo', 'like', '%'.Servico::ZAFAZ.'%')->first();
-
-        //dd($zafaz->subServicos);
-
-        $filiais = Filial::orderBy('ordem')->get();
-
-        return view('welcome', compact('clientes', 'filiais', 'servicos', 'zafaz'));
+        return view('welcome');
     }
 }

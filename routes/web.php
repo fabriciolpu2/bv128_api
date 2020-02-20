@@ -25,7 +25,13 @@ use App\User;
 // Route::post('admin/register', 'Auth\RegisterController@register');
 Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
-    Route::get('/', 'WelcomeController@welcome')->name('welcome');
+    Route::get('/',  function() {
+        return view("cliente.welcome");
+    });
+
+    Route::get('/projeto', function (){
+        return view("cliente.projetos.show");
+    });
 
 });
 

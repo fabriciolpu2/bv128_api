@@ -2,18 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h1 class="title">BLK•</h1>
+                <h1 class="title">Canaimé Studio</h1>
             </div>
             <div class="col-md-3 col-6">
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="./index.html" class="nav-link">
-                            Home
+                            Inicio
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="./examples/landing-page.html" class="nav-link">
-                            Landing
+                            Projetos
                         </a>
                     </li>
                     <li class="nav-item">
@@ -25,12 +25,12 @@
                         <a href="./examples/profile-page.html" class="nav-link">
                             Profile
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="col-md-3 col-6">
                 <ul class="nav">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="" class="nav-link">
                             Contact Us
                         </a>
@@ -49,11 +49,11 @@
                         <a href="" class="nav-link">
                             License
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="col-md-3">
-                <h3 class="title">Follow us:</h3>
+                <h3 class="title">Nossas redes:</h3>
                 <div class="btn-wrapper profile text-left">
                     <a target="_blank" href="" class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip" data-original-title="Follow us">
                         <i class="fab fa-twitter"></i>

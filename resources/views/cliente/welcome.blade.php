@@ -2,6 +2,7 @@
 
 @section('content')
 
+@include('cliente.layouts.headers.lading_page')
 <!-- sobre / informacoes sobre o canaime -->
 
 <div class="features-4">
@@ -78,7 +79,7 @@
             </li>
             <li class="nav-item m-auto">
                 <a class="nav-link" data-toggle="tab" href="#project2" role="tablist">
-                    <i class="tim-icons icon-bag-16"></i> Project 2
+                    <i class="tim-icons icon-bag-16"></i> Urban 95
                 </a>
             </li>
             <li class="nav-item m-auto">
@@ -94,7 +95,7 @@
                     <div class="col-md-4">
                         <div class="card card-blog">
                             <div class="card-image h-auto">
-                                <img class="img rounded" src="http://s3.amazonaws.com/creativetim_bucket/products/38/original/opt_mk_thumbnail.jpg?1458052306s">
+                                <img class="img rounded" src="https://lh6.googleusercontent.com/JOUv-FaQvKhwjFn0hOa2OIDpgw1hYbfxj5WsQQIfvTPej6-nATjR58tRKKDPxf_KmiD08rNN=w16383">
                             </div>
                             <div class="card-body text-left">
                                 <div class="card-footer mt-0">
@@ -119,7 +120,7 @@
                     <div class="col-md-4">
                         <div class="card card-blog">
                             <div class="card-image h-auto">
-                                <img class="img rounded" src="https://s3.amazonaws.com/creativetim_bucket/products/137/original/opt_adp_thumbnail.jpg?1544778965">
+                                <img class="img rounded" src="https://lh5.googleusercontent.com/4mREjDerz9_-AvFUgKysPjj7gsNS3qFEsP8BLkrGS739f9P72S8rvEB3lKMai9pUK4M544Q_PdWBxjtpErdETR17DdtPf1tn26OJr2D4GzjeSgSjIzM=w371">
                             </div>
                             <div class="card-body text-left">
                                 <div class="card-footer mt-0">

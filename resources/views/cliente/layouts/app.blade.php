@@ -23,8 +23,7 @@
 </head>
 
 <body>
-    @include('cliente.layouts/_header')
-
+   
     <div id="app" class="main">
         @yield('content')
     </div>
