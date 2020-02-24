@@ -2,15 +2,14 @@
     <div class="navbar-collapse-header">
         <div class="row">
             <div class="col-6 collapse-brand">
-                <a>
+                <a href="{{route('home.cliente')}}">
                     Canaimé
                     <span> Studio </span>
                 </a>
             </div>
             <div class="col-6 collapse-close text-right">
-                <button type="button" class="navbar-toggler" data-toggle="collapse"
-                    data-target="#example-header-4" aria-controls="navigation-index"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#example-header-4"
+                    aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="tim-icons icon-simple-remove"></i>
                 </button>
             </div>
@@ -18,23 +17,23 @@
     </div>
     <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="javascript:;">
+            <a class="nav-link" href="{{route('home.cliente')}}">
                 Home
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:;">
-                About Us
+                Sobre
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:;">
-                Products
+                Projetos
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:;">
-                Contact Us
+                Contato
             </a>
         </li>
     </ul>

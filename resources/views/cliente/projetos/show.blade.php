@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <img class="d-block"
-                                        src="https://lh4.googleusercontent.com/bPkwGRc6ly-XwGSz0fwSuaC3yVV8FLDGL5ezlzDjeH-zwBUZP6QyTE72UCL5E13cJIqyS2qaYprdLb4bTc0MA0Sr7Qq3y8ZjtCmMP5gHawWn_2Wn3X8=w572"
+                                        src="/cliente/images/forte_1830.png"
                                         alt="First slide">
                                 </div>
                                 <div class="col-md-4">
@@ -123,7 +123,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <img class="d-block"
-                                        src="https://lh4.googleusercontent.com/iQvJH-cLaLi4pv1FNus_MDV0CgXa6QWvWRxj6ArFle9y-NvAfdA3y8hjVI1W4Kg-yN73x6-784BVJ7iuMw0Vsjbp-tMuoIsyR5cCyccu-JhmT4fFVg=w572"
+                                        src="/cliente/images/capitao_forte.png"
                                         alt="First slide">
                                 </div>
                                 <div class="col-md-4">
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <img class="d-block"
-                                        src="https://lh4.googleusercontent.com/tDmFeT751OJHmf4AphUeWZdEUqzfmgq6ubtUmgvTAWEdzJcObgDZjsC6yOSF31jWdpK36uNNb-X2JmIrvZEgPbeOPLcNWHrsQzizrXa-FTnvzkV1RcI=w371"
+                                        src="/cliente/images/igreja.png"
                                         alt="First slide">
                                 </div>
                                 <div class="col-md-4">

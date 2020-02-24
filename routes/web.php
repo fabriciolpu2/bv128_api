@@ -27,11 +27,11 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
     Route::get('/',  function() {
         return view("cliente.welcome");
-    });
+    })->name('home.cliente');
 
     Route::get('/projeto', function (){
         return view("cliente.projetos.show");
-    });
+    })->name('projeto.show');
 
 });
 

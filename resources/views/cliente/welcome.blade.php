@@ -10,7 +10,8 @@
         <div class="row align-items-center">
             <div class="col-lg-3 mr-auto text-left">
                 <h1 class="title">Os melhores games educativos!</h1>
-                <p class="description">5,000 capacity venue, holding some of the latest technology lighting with a 24 colour laser system Amnesia is one of the islands most legendary clubs.</p>
+                <p class="description">5,000 capacity venue, holding some of the latest technology lighting with a 24
+                    colour laser system Amnesia is one of the islands most legendary clubs.</p>
                 <a class="btn btn-primary mt-3" href="javascript:;">
                     Learn more <i class="tim-icons icon-double-right"></i>
                 </a>
@@ -23,7 +24,8 @@
                                 <i class="tim-icons icon-satisfied"></i>
                             </div>
                             <h4 class="info-title">Best Quality</h4>
-                            <p class="description">Gain access to the demographics, psychographics, and location of unique people.</p>
+                            <p class="description">Gain access to the demographics, psychographics, and location of
+                                unique people.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -32,7 +34,8 @@
                                 <i class="tim-icons icon-palette"></i>
                             </div>
                             <h4 class="info-title">Awesome Design</h4>
-                            <p class="description">Gain access to the demographics, psychographics, and location of unique people.</p>
+                            <p class="description">Gain access to the demographics, psychographics, and location of
+                                unique people.</p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +46,8 @@
                                 <i class="tim-icons icon-user-run"></i>
                             </div>
                             <h4 class="info-title">Fast Development</h4>
-                            <p class="description">Gain access to the demographics, psychographics, and location of unique people.</p>
+                            <p class="description">Gain access to the demographics, psychographics, and location of
+                                unique people.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -52,7 +56,8 @@
                                 <i class="tim-icons icon-bulb-63"></i>
                             </div>
                             <h4 class="info-title">Super Fresh</h4>
-                            <p class="description">Gain access to the demographics, psychographics, and location of unique people.</p>
+                            <p class="description">Gain access to the demographics, psychographics, and location of
+                                unique people.</p>
                         </div>
                     </div>
                 </div>
@@ -94,23 +99,16 @@
                 <div class="row mt-5">
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <div class="card-image h-auto">
-                                <img class="img rounded" src="https://lh6.googleusercontent.com/JOUv-FaQvKhwjFn0hOa2OIDpgw1hYbfxj5WsQQIfvTPej6-nATjR58tRKKDPxf_KmiD08rNN=w16383">
-                            </div>
+                            <a href="{{route('projeto.show')}}">
+                                <div class="card-image h-auto">
+                                    <img class="img rounded" src="/cliente/images/fazenda.png">
+                                </div>
+                            </a>
                             <div class="card-body text-left">
                                 <div class="card-footer mt-0">
-                                    <div class="stats stats-right">
-                                        <div class="stars text-warning">
-                                            <i class="tim-icons icon-shape-star"></i>
-                                            <i class="tim-icons icon-shape-star"></i>
-                                            <i class="tim-icons icon-shape-star"></i>
-                                            <i class="tim-icons icon-shape-star"></i>
-                                            <i class="tim-icons icon-shape-star"></i>
-                                        </div>
-                                    </div>
                                     <div class="author">
                                         {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
-                                        <span>Material Kit</span>
+                                        <span>FAZENDA BOA VISTA, 1905</span>
                                     </div>
                                 </div>
                             </div>
@@ -119,17 +117,18 @@
 
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <div class="card-image h-auto">
-                                <img class="img rounded" src="https://lh5.googleusercontent.com/4mREjDerz9_-AvFUgKysPjj7gsNS3qFEsP8BLkrGS739f9P72S8rvEB3lKMai9pUK4M544Q_PdWBxjtpErdETR17DdtPf1tn26OJr2D4GzjeSgSjIzM=w371">
-                            </div>
+                            <a href="{{route('projeto.show')}}">
+                                <div class="card-image h-auto">
+                                    <img class="img rounded" src="/cliente/images/orla.png">
+                                </div>
+                            </a>
                             <div class="card-body text-left">
                                 <div class="card-footer mt-0">
-                                    <div class="stats stats-right">
-                                        <i class="tim-icons icon-heart-2 text-danger"></i> 127
-                                    </div>
+
                                     <div class="author">
                                         {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
-                                        <span>Argon Dashboard Pro</span>
+                                        <span>ORLA TAUMAN,
+                                            BOA VISTA, 2019</span>
                                     </div>
                                 </div>
                             </div>
@@ -140,37 +139,38 @@
             <div class="tab-pane" id="project2">
                 <div class="space-100"></div>
                 <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Add your information here for Project2.</p>
+                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui2.</p>
                 </div>
                 <div class="space-100"></div>
             </div>
             <div class="tab-pane" id="project3">
                 <div class="space-100"></div>
                 <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Add your information here for Project3.</p>
+                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui3.</p>
                 </div>
                 <div class="space-100"></div>
             </div>
             <div class="tab-pane" id="project4">
                 <div class="space-100"></div>
                 <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Add your information here for Project4.</p>
+                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui4.</p>
                 </div>
                 <div class="space-100"></div>
             </div>
             <div class="tab-pane" id="project5">
                 <div class="space-100"></div>
                 <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Add your information here for Project5.</p>
+                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui5.</p>
                 </div>
                 <div class="space-100"></div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                <h3 class="title">Interested in our projects?</h3>
-                <h4 class="description mb-5">This is the paragraph where you can write more details about your projects. Keep you user engaged by providing meaningful information.</h4>
-                <button class="btn btn-primary btn-lg">Contact us</button>
+                <h3 class="title">Tem interesse em nossos projetos?</h3>
+                <h4 class="description mb-5">Aqui devemos escrever um paragrafo com mais detalhes a cerca dos projetos.
+                    Manter o usuario concentrado na leitura.</h4>
+                <button class="btn btn-primary btn-lg">Entre em contato</button>
             </div>
         </div>
     </div>

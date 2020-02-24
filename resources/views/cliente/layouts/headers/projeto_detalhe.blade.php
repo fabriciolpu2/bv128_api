@@ -8,14 +8,14 @@
                     <span class="navbar-toggler-bar bar2"></span>
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
-                <a class="navbar-brand" href="javascript:;">Canaimé Studio</a>
+                <a class="navbar-brand" href="{{route('home.cliente')}}">Canaimé Studio</a>
             </div>
             @include('cliente.layouts.headers._bar')
         </div>
     </nav>
     <div class="page-header header-filter">
         <div class="page-header-image"
-            style="background-image: url('https://lh6.googleusercontent.com/JOUv-FaQvKhwjFn0hOa2OIDpgw1hYbfxj5WsQQIfvTPej6-nATjR58tRKKDPxf_KmiD08rNN=w16383');">
+            style="background-image: url('/cliente/images/header_projeto_bv_128.png');">
         </div>
         <div class="container">
             <div class="row">

@@ -9,7 +9,7 @@
                         <span class="navbar-toggler-bar bar2"></span>
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="javascript:;">Canaimé Studio</a>
+                    <a class="navbar-brand" href="{{route('home.cliente')}}">Canaimé Studio</a>
                 </div>
                 @include('cliente.layouts.headers._bar')
             </div>
@@ -24,7 +24,8 @@
                     <h2 class="description">Venha participar da revolução na educação</h2>
                     <h1 class="title">Agora você pode estudar atraves da Realidade Virtual !</h1>
                     <br />
-                    <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-primary btn-round btn-lg mr-3 pulse">
+                    <a href="http://game.bv128.canaimestudio.com.br/" target="_blank"
+                        class="btn btn-primary btn-round btn-lg mr-3 pulse">
                         <i class="tim-icons icon-controller"></i>
                     </a>
                     <span> Jogar Agora! </span>
