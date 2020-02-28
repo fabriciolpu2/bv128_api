@@ -5,7 +5,7 @@
 @include('cliente.layouts.headers.lading_page')
 <!-- sobre / informacoes sobre o canaime -->
 
-<div class="features-4">
+<div class="features-4" id="sobre">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-3 mr-auto text-left">

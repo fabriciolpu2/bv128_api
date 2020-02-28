@@ -48,6 +48,17 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+
+                <a href="{{ url('/admin/logout') }}" class="nav-link"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Sair
+                </a>
+                <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+
         @else
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
@@ -56,45 +67,51 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
+                <a class="nav-link" href="">
                     Projetos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('admin.login')}}">
+                <a class="nav-link" href="{{route('login')}}">
                     EAD
                 </a>
             </li>
 
+
+            <li class="nav-item">
+                <a class="nav-link" href="#sobre">
+                    Sobre
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                    Contato
+                </a>
+            </li>
+
         @endif
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:;">
-                Sobre
-            </a>
-        </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:;">
-                Contato
-            </a>
-        </li>
 
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fab fa-facebook-square"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </li>
-    </ul>
+    @if (!(Auth::user()))
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    @endif
 </div>

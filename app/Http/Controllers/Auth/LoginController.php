@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -37,15 +39,16 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // protected function authenticated(Request $request, $user)
-    // {
-    //     if($user->hasRole(['desenvolvedor', 'administrador'])){
-    //         return redirect()->route('admin.servicos.index');
-    //     }elseif($user->hasRole('professor')){
-    //         return redirect()->route('projeto.index');
-    //     }else{
-    //         Auth::logout();
-    //         return redirect('/');
-    //     }
-    // }
+    protected function authenticated(Request $request, $user)
+    {
+
+        if($user->hasRole(['desenvolvedor', 'administrador'])){
+            return redirect()->route('servicos.index');
+        }elseif($user->hasRole('professor')){
+            return redirect()->route('projeto.index');
+        }else{
+            Auth::logout();
+            return redirect('/');
+        }
+    }
 }

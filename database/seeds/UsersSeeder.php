@@ -44,7 +44,7 @@ class UsersSeeder extends Seeder
             'password' => bcrypt($password = 'password'),
         ]);
 
-        $editor->syncRoles(['professor']);
+        $professor->syncRoles(['professor']);
 
     }
 }
