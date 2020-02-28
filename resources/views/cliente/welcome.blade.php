@@ -68,7 +68,7 @@
 
 <!-- PROJETOS -->
 
-<div class="projects-2 project-raised">
+<div class="projects-2 project-raised" id="projetos">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 ml-auto mr-auto text-center mb-5">
@@ -101,7 +101,7 @@
                         <div class="card card-blog">
                             <a href="{{route('projeto.show')}}">
                                 <div class="card-image h-auto">
-                                    <img class="img rounded" src="/cliente/images/fazenda.png">
+                                    <img class="img rounded" src="/cliente/images/fazenda_1905.png">
                                 </div>
                             </a>
                             <div class="card-body text-left">

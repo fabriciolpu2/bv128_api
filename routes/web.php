@@ -33,9 +33,8 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
         return view("cliente.projetos.show");
     })->name('projeto.show');
 
-    Route::get('/projeto/bv', function (){
-        return view("cliente.projetos.index");
-    })->name('projeto.index');
+    Route::get('/projeto/bv', function (){return view("cliente.projetos.index");})
+        ->middleware(['auth', 'role:professor'])->name('projeto.index');
 
 });
 
