@@ -16,26 +16,69 @@
         </div>
     </div>
     <ul class="navbar-nav mx-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="{{route('home.cliente')}}">
-                Home
-            </a>
-        </li>
+        @if(Auth::user() && Auth::user()->hasRole('professor'))
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    BV128
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    Manuel de utilização
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    Planos de Aula
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    BNCC
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    Galeria
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    Calendário
+                </a>
+            </li>
+
+        @else
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home.cliente')}}">
+                    Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                    Projetos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.login')}}">
+                    EAD
+                </a>
+            </li>
+
+        @endif
         <li class="nav-item">
             <a class="nav-link" href="javascript:;">
                 Sobre
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:;">
-                Projetos
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" href="javascript:;">
                 Contato
             </a>
         </li>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">

@@ -36,4 +36,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     if($user->hasRole(['desenvolvedor', 'administrador'])){
+    //         return redirect()->route('admin.servicos.index');
+    //     }elseif($user->hasRole('professor')){
+    //         return redirect()->route('projeto.index');
+    //     }else{
+    //         Auth::logout();
+    //         return redirect('/');
+    //     }
+    // }
 }

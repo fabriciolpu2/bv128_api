@@ -38,5 +38,13 @@ class UsersSeeder extends Seeder
 
         $editor->syncRoles(['editor']);
 
+        $professor = User::firstOrCreate([
+            'name' => 'Professor',
+            'email' => 'professor@mail.com',
+            'password' => bcrypt($password = 'password'),
+        ]);
+
+        $editor->syncRoles(['professor']);
+
     }
 }
