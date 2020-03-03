@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('home.cliente')}}">
+                <a class="nav-link" href="#material">
                     Manuel de utilização
                 </a>
             </li>

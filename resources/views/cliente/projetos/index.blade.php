@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <section class="section section-lg section-safe">
+            <section class="section section-lg section-safe" id="material">
                 <div class="container">
                   <div class="row row-grid justify-content-between">
                     <div class="col-md-5">
@@ -107,7 +107,7 @@
                                 <i class="tim-icons icon-world"></i>
                               </div>
                               <div class="ml-3">
-                                <h5>História: Temos a história da fundação da cidade de Boa vista, capital de Roraima, além de trazer forte aspectos culturais da nossa região e da cultura indígena.</h5>
+                                <h6>História: Temos a história da fundação da cidade de Boa vista, capital de Roraima, além de trazer forte aspectos culturais da nossa região e da cultura indígena.</h6>
                               </div>
                             </div>
                           </li>
