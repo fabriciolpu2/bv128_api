@@ -7,7 +7,7 @@
             <div class="col-md-3 col-6">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="{{route('home.cliente')}}" class="nav-link">
                             Inicio
                         </a>
                     </li>

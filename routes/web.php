@@ -25,17 +25,21 @@ use App\User;
 // Route::post('admin/register', 'Auth\RegisterController@register');
 Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
-    Route::get('/',  function() {
+    Route::get('/',  function () {
         return view("cliente.welcome");
     })->name('home.cliente');
 
-    Route::get('/projeto', function (){
-        return view("cliente.projetos.show");
-    })->name('projeto.show');
+    Route::get('/projetos/bv-128', function () {
+        return view("cliente.projetos.index");
+    })->name('projeto.bv-128');
+    // bora tornar essa pagina pra controle de conteudo com acesso do professor
+    // Route::get('/projetos/bv-128', function () {
+    //     return view("cliente.projetos.index");
+    // })->middleware(['auth', 'role:professor'])->name('projeto.index');
 
-    Route::get('/projeto/bv', function (){return view("cliente.projetos.index");})
-        ->middleware(['auth', 'role:professor'])->name('projeto.index');
-
+    Route::get('/projetos/bv-128/aulas', function(){
+        return view("cliente.aulas.index");
+    })->name('projeto.aulas');
 });
 
 
