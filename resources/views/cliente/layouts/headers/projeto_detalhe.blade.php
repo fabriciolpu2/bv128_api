@@ -1,5 +1,5 @@
 <div class="header header-1">
-    <nav class="navbar navbar-expand-lg bg-primary navbar-absolute">
+    <nav class="navbar navbar-expand-lg bg-danger navbar-absolute">
         <div class="container">
             <div class="navbar-translate">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-header-1"
@@ -24,7 +24,7 @@
                     <h1 class="title">BOA VISTA 128 VR</h1>
                     <br>
                     <div class="buttons">
-                        <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-primary btn-round btn-lg mr-3 pulse">
+                        <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-danger btn-round btn-lg mr-3 pulse">
                             <i class="tim-icons icon-controller"></i>
                         </a>
                         <span> Jogar Agora! </span>

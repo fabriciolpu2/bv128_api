@@ -2,10 +2,17 @@
     <div class="navbar-collapse-header">
         <div class="row">
             <div class="col-6 collapse-brand">
-                <a href="{{route('home.cliente')}}">
-                    Canaimé
-                    <span> Studio </span>
-                </a>
+                @if (!(Auth::user()))
+                    <a href="{{route('home.cliente')}}">
+                        Canaimé
+                        <span> Studio </span>
+                    </a>
+                @else
+                    <a href="{{route('projeto.bv-128')}}">
+                        Canaimé
+                        <span> Studio </span>
+                    </a>
+                @endif
             </div>
             <div class="col-6 collapse-close text-right">
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#example-header-4"
@@ -28,25 +35,25 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('home.cliente')}}">
+                <a class="nav-link" href="#plano-aulas">
                     Planos de Aula
                 </a>
             </li>
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
                     BNCC
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item active">
                 <a class="nav-link" href="#galeria">
                     Galeria
                 </a>
             </li>
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
                     Calendário
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
 

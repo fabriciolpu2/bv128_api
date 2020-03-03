@@ -45,7 +45,7 @@ class LoginController extends Controller
         if($user->hasRole(['desenvolvedor', 'administrador'])){
             return redirect()->route('servicos.index');
         }elseif($user->hasRole('professor')){
-            return redirect()->route('projeto.index');
+            return redirect()->route('projeto.bv-128');
         }else{
             Auth::logout();
             return redirect('/');
