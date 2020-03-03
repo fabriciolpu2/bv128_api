@@ -21,7 +21,9 @@
             <div class="row">
                 <div class="col-lg-5 col-md-7 mr-auto text-left mt-5">
                     <h6 class="category">O game que conta a historia de Roraima</h6>
-                    <h1 class="title">BOA VISTA 128 VR</h1>
+                    <img src="/cliente/images/bv128vr.png"></img>
+                    <br>
+                    <br>
                     <br>
                     <div class="buttons">
                         <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-danger btn-round btn-lg mr-3 pulse">
