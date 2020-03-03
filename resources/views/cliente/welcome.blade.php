@@ -109,6 +109,9 @@
                                     <div class="author">
                                         {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
                                         <span>FAZENDA BOA VISTA, 1905</span>
+                                        <br>
+                                        <br>
+                                        <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a>
                                     </div>
                                 </div>
                             </div>
