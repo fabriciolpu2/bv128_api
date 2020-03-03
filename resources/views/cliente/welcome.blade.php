@@ -87,11 +87,6 @@
                     <i class="tim-icons icon-bag-16"></i> Urban 95
                 </a>
             </li>
-            <li class="nav-item m-auto">
-                <a class="nav-link" data-toggle="tab" href="#project3" role="tablist">
-                    <i class="tim-icons icon-light-3"></i> Project 3
-                </a>
-            </li>
 
         </ul>
         <div class="tab-content tab-space">
@@ -99,7 +94,7 @@
                 <div class="row mt-5">
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <a href="{{route('projeto.show')}}">
+                            <a href="{{route('projeto.bv-128')}}">
                                 <div class="card-image h-auto">
                                     <img class="img rounded" src="/cliente/images/fazenda_1905.png">
                                 </div>
@@ -120,7 +115,7 @@
 
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <a href="{{route('projeto.show')}}">
+                            <a href="{{route('projeto.bv-128')}}">
                                 <div class="card-image h-auto">
                                     <img class="img rounded" src="/cliente/images/orla.png">
                                 </div>
@@ -132,6 +127,9 @@
                                         {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
                                         <span>ORLA TAUMAN,
                                             BOA VISTA, 2019</span>
+                                        <br>
+                                        <br>
+                                        <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +166,7 @@
                 <div class="space-100"></div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="contato">
             <div class="col-md-8 ml-auto mr-auto text-center mt-4">
                 <h3 class="title">Tem interesse em nossos projetos?</h3>
                 <h4 class="description mb-5">Aqui devemos escrever um paragrafo com mais detalhes a cerca dos projetos.

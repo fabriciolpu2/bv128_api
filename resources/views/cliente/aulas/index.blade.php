@@ -29,8 +29,10 @@
                     </div>
                     <div class="card-footer text-left">
                         <div class="author">
-                            <button class="btn btn-primary btn-round btn-simple"><i
-                                    class="tim-icons icon-triangle-right-17"></i> Visualizar aula</button>
+                            <a href="" target="blank">Material Teórico - Aula 01 Historia</a>
+                            <br>
+                            <br>
+                            <a href="" target="blank">Outro link q tem la</a>
                         </div>
                     </div>
                 </div>
@@ -48,8 +50,7 @@
                     </div>
                     <div class="card-footer text-left">
                         <div class="author">
-                            <button class="btn btn-primary btn-round btn-simple"><i
-                                    class="tim-icons icon-triangle-right-17"></i> Visualizar aula</button>
+                            <a href="" target="blank"> Material Teórico - Aula 02 Historia</a>
                         </div>
                     </div>
                 </div>

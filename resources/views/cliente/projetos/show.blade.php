@@ -79,9 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <img class="d-block"
-                                        src="/cliente/images/forte_1830.png"
-                                        alt="First slide">
+                                    <img class="d-block" src="/cliente/images/forte_1830.png" alt="First slide">
                                 </div>
                                 <div class="col-md-4">
                                     <div class="wrapper">
@@ -122,9 +120,7 @@
 
                                 </div>
                                 <div class="col-md-8">
-                                    <img class="d-block"
-                                        src="/cliente/images/capitao_forte.png"
-                                        alt="First slide">
+                                    <img class="d-block" src="/cliente/images/capitao_forte.png" alt="First slide">
                                 </div>
                                 <div class="col-md-4">
                                     <div class="wrapper">
@@ -165,9 +161,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <img class="d-block"
-                                        src="/cliente/images/igreja.png"
-                                        alt="First slide">
+                                    <img class="d-block" src="/cliente/images/igreja.png" alt="First slide">
                                 </div>
                                 <div class="col-md-4">
                                     <div class="wrapper">
