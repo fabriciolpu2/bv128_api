@@ -94,7 +94,7 @@
                 <div class="row mt-5">
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <a href="{{route('projeto.bv-128')}}">
+                            <a href="#">
                                 <div class="card-image h-auto">
                                     <img class="img rounded" src="/cliente/images/fazenda_1905.png">
                                 </div>
@@ -106,7 +106,8 @@
                                         <span>FAZENDA BOA VISTA, 1905</span>
                                         <br>
                                         <br>
-                                        <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a>
+                                        Sede da Fazenda Boa Vista, e Igreja Nossa Senhora do Carmo
+                                        {{-- <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +116,31 @@
 
                     <div class="col-md-4">
                         <div class="card card-blog">
-                            <a href="{{route('projeto.bv-128')}}">
+                            <a href="#">
+                                <div class="card-image h-auto">
+                                    <img class="img rounded" src="/cliente/images/forte_1830.png">
+                                </div>
+                            </a>
+                            <div class="card-body text-left">
+                                <div class="card-footer mt-0">
+
+                                    <div class="author">
+                                        {{-- <img src="assets/img/Tim.png" alt="..." class="avatar img-raised"> --}}
+                                        <span>FORTE SÃO JOAQUIM, 1830</span>
+                                            <br>
+                                            <br>
+                                            Área interna do Forte
+                                            {{-- <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a>
+                                            --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <a href="#">
                                 <div class="card-image h-auto">
                                     <img class="img rounded" src="/cliente/images/orla.png">
                                 </div>
@@ -129,7 +154,8 @@
                                             BOA VISTA, 2019</span>
                                         <br>
                                         <br>
-                                        <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a>
+                                        Local onde ficava o Porto de Cimento
+                                        {{-- <a href="{{route('projeto.aulas')}}">Consultar aulas do projeto</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -140,38 +166,17 @@
             <div class="tab-pane" id="project2">
                 <div class="space-100"></div>
                 <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui2.</p>
+                    <p class="description mb-5">Novidades em breve !</p>
                 </div>
                 <div class="space-100"></div>
             </div>
-            <div class="tab-pane" id="project3">
-                <div class="space-100"></div>
-                <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui3.</p>
-                </div>
-                <div class="space-100"></div>
-            </div>
-            <div class="tab-pane" id="project4">
-                <div class="space-100"></div>
-                <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui4.</p>
-                </div>
-                <div class="space-100"></div>
-            </div>
-            <div class="tab-pane" id="project5">
-                <div class="space-100"></div>
-                <div class="col-md-8 ml-auto mr-auto text-center mt-4">
-                    <p class="description mb-5">Adicionar informacoes sobre o projeto aqui5.</p>
-                </div>
-                <div class="space-100"></div>
-            </div>
+           
         </div>
         <div class="row" id="contato">
             <div class="col-md-8 ml-auto mr-auto text-center mt-4">
                 <h3 class="title">Tem interesse em nossos projetos?</h3>
-                <h4 class="description mb-5">Aqui devemos escrever um paragrafo com mais detalhes a cerca dos projetos.
-                    Manter o usuario concentrado na leitura.</h4>
-                <button class="btn btn-primary btn-lg">Entre em contato</button>
+                <h4 class="description mb-5">Entre em contato e vamos trocar uma ideia</h4>
+                <button class="btn btn-primary btn-lg">Entrar em contato</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <div class="header header-1">
-    <nav class="navbar navbar-expand-lg bg-danger navbar-absolute">
+    <nav class="navbar navbar-expand-lg  fixed-top">
         <div class="container">
             <div class="navbar-translate">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-header-1"

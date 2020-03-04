@@ -1,4 +1,4 @@
-<div class="collapse navbar-collapse" id="example-header-4">
+<div class="collapse navbar-collapse " id="example-header-4">
     <div class="navbar-collapse-header">
         <div class="row">
             <div class="col-6 collapse-brand">
@@ -31,7 +31,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#material">
-                    Manuel de utilização
+                    Manual de utilização
                 </a>
             </li>
             <li class="nav-item active">
@@ -44,11 +44,11 @@
                     BNCC
                 </a>
             </li> --}}
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="#galeria">
                     Galeria
                 </a>
-            </li>
+            </li> --}}
             {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
                     Calendário
