@@ -7,7 +7,6 @@
 <div class="features-4">
 
     <div class="container">
-        <div class="row">
 
             {{-- BREVE DESCRICAO --}}
 
@@ -215,7 +214,13 @@
 
 
             {{--Galeria--}}
-            <div class="team-1 row" id="galeria">
+            <div class="team-1" id="galeria">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center mb-5">
+                        {{-- <h6 class="category text-muted">3º ANO ENSINO FUNDAMENTAL - HISTÓRIA</h6> --}}
+                        <h2 class="title mt-0">Galeria</h2>
+                    </div>
+                </div>
                 <div id="carouselExampleControls" class="carousel slide carousel-team">
                     <div class="carousel-inner">
                         <div class="carousel-item">
@@ -465,7 +470,6 @@
         </div>
 
 
-    </div>
 </div>
 
 

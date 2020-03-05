@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-sm-12 mt-3">
                     <button type="button" :disabled="enviando" @click="enviar" class="btn primary-solid-btn">
-                        <span v-if="!enviando">Enviar</span>
+                        <span v-if="!enviando">Enviar Enviar</span>
                         <scale-loader :loading="enviando" :color="'#fff'"></scale-loader>
                     </button>
                 </div>
@@ -48,13 +48,13 @@
                 <p>Obrigado pelo seu contato.</p>
                 <p>Em breve retornaremos sua mensagem!</p>
             </div>
-        </div>        
+        </div>
     </div>
 </template>
 
 <script>
     import FieldError from "./FieldError.vue";
-    
+
     export default {
         components: {
             FieldError
@@ -74,7 +74,7 @@
         },
 
         mounted() {
-            
+
         },
 
         methods: {
@@ -89,9 +89,9 @@
             enviar(evt){
                 evt.preventDefault();
                 this.enviando = true;
-            
+
                 let formData = new FormData();
-                
+
                 formData.append("nome", this.form.nome);
                 formData.append("email", this.form.email);
                 formData.append("telefone", this.form.telefone);
@@ -106,9 +106,9 @@
                 .catch(error => {
                     this.enviando = false;
                     if (error.response.status == 422) {
-                        this.errors = error.response.data.errors;                        
+                        this.errors = error.response.data.errors;
                     }
-                });  
+                });
             }
         }
     }

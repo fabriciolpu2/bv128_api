@@ -6,11 +6,11 @@
             </div>
             <div class="col-md-3 col-6">
                 <ul class="nav">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{route('home.cliente')}}" class="nav-link">
                             Inicio
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="nav-item">
                         <a href="./examples/landing-page.html" class="nav-link">
                             Projetos

@@ -5,7 +5,7 @@
 @include('cliente.layouts.headers.lading_page')
 <!-- sobre / informacoes sobre o canaime -->
 
-<div class="features-4" id="sobre">
+{{-- <div class="features-4" id="sobre">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-3 mr-auto text-left">
@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- PROJETOS -->
 
@@ -170,13 +170,13 @@
                 </div>
                 <div class="space-100"></div>
             </div>
-           
+
         </div>
         <div class="row" id="contato">
             <div class="col-md-8 ml-auto mr-auto text-center mt-4">
                 <h3 class="title">Tem interesse em nossos projetos?</h3>
                 <h4 class="description mb-5">Entre em contato e vamos trocar uma ideia</h4>
-                <button class="btn btn-primary btn-lg">Entrar em contato</button>
+                <a href="{{ route('contato') }}" class="btn btn-primary btn-lg" >Entrar em contato</a>
             </div>
         </div>
     </div>

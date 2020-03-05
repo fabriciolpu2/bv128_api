@@ -50,6 +50,8 @@ class HomeController extends Controller
 
     public function sendMessage(Request $request)
     {
+
+
         $this->validate($request, [
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],

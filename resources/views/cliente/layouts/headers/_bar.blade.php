@@ -91,13 +91,13 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#contato">
-                    Contato
-                </a>
-            </li>
 
-        @endif
+            @endif
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('contato')}}">
+                        Contato
+                    </a>
+                </li>
 
 
     </ul>

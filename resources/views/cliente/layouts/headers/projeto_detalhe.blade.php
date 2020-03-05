@@ -13,31 +13,33 @@
             @include('cliente.layouts.headers._bar')
         </div>
     </nav>
-    <div class="page-header header-filter">
-        <div class="page-header-image"
-            style="background-image: url('/cliente/images/header_projeto_bv_128.png');">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-7 mr-auto text-left mt-5">
-                    <h6 class="category">O game que conta a historia de Roraima</h6>
-                    <img src="/cliente/images/bv128vr.png"></img>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="buttons">
-                        <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-danger btn-round btn-lg mr-3 pulse">
-                            <i class="tim-icons icon-controller"></i>
-                        </a>
-                        <span> Jogar Agora! </span>
+    @if (!(\Request::is('contato')))
+        <div class="page-header header-filter">
+            <div class="page-header-image"
+                style="background-image: url('/cliente/images/header_projeto_bv_128.png');">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-7 mr-auto text-left mt-5">
+                        <h6 class="category">O game que conta a historia de Roraima</h6>
+                        <img src="/cliente/images/bv128vr.png"></img>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="buttons">
+                            <a href="http://game.bv128.canaimestudio.com.br/" target="_blank" class="btn btn-danger btn-round btn-lg mr-3 pulse">
+                                <i class="tim-icons icon-controller"></i>
+                            </a>
+                            <span> Jogar Agora! </span>
+                        </div>
                     </div>
+                    {{-- <div class="col-lg-7 col-md-12 ml-auto mt-5">
+                        <div class="iframe-container">
+                            <img src="https://lh4.googleusercontent.com/bPkwGRc6ly-XwGSz0fwSuaC3yVV8FLDGL5ezlzDjeH-zwBUZP6QyTE72UCL5E13cJIqyS2qaYprdLb4bTc0MA0Sr7Qq3y8ZjtCmMP5gHawWn_2Wn3X8=w572" alt="gif">
+                        </div>
+                    </div> --}}
                 </div>
-                {{-- <div class="col-lg-7 col-md-12 ml-auto mt-5">
-                    <div class="iframe-container">
-                        <img src="https://lh4.googleusercontent.com/bPkwGRc6ly-XwGSz0fwSuaC3yVV8FLDGL5ezlzDjeH-zwBUZP6QyTE72UCL5E13cJIqyS2qaYprdLb4bTc0MA0Sr7Qq3y8ZjtCmMP5gHawWn_2Wn3X8=w572" alt="gif">
-                    </div>
-                </div> --}}
             </div>
         </div>
-    </div>
+    @endif
 </div>

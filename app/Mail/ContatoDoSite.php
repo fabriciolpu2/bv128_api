@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class ContatoDoSite extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
-    
+
     private $contato;
 
     /**
@@ -21,7 +21,7 @@ class ContatoDoSite extends Mailable implements ShouldQueue
     public function __construct($contato)
     {
         $this->contato = $contato;
-        $this->subject('Contato - amplomed.com.br');
+        $this->subject('Contato - canaimestudio.com.br');
     }
 
     /**
@@ -31,6 +31,7 @@ class ContatoDoSite extends Mailable implements ShouldQueue
      */
     public function build()
     {
+
         return $this->from($this->contato['email'])
                     ->markdown('mail.contato')
                     ->with('contato', $this->contato);

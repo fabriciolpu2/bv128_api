@@ -1,7 +1,9 @@
 @extends('cliente.layouts.app')
 
 @section('content')
-<section class="contact-us-section ptb-100">
+
+@include('cliente.layouts.headers.projeto_detalhe')
+<section class="features-4">
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-lg-9">
