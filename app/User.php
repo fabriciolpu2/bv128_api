@@ -11,6 +11,11 @@ class User extends Authenticatable
 {
     use Notifiable, HasRoles;
 
+    public function turmas()
+    {
+        return $this->hasMany('App\Models\Turma', 'professor_id', 'id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
