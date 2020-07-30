@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aluno;
+use App\Models\AlunoHistorico;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -23,6 +24,18 @@ class AlunoController extends Controller
     }
     public function alunosTurma() {
         //$professor = Auth::user()->turmas;
+    }
+    public function historico(Request $request){
+        $input = $request->all();
+        
+        //$a = AlunoHistorico::create($input);
+        foreach ($input[0] as $aluno) {
+            //AlunoHistorico::create($aluno);
+        }
+        return response()->json([
+            'alunos' => $input,
+            'message' => 'sucesso'
+            ], 200);
     }
     
 }

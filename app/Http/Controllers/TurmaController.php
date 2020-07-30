@@ -23,4 +23,8 @@ class TurmaController extends Controller
         $turmas = Auth::user()->turmas;
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
+    public function alunos($turma){
+        $alunos = Turma::find($turma)->alunos;
+        return view('portal-bv128/alunos/index', compact('alunos'));
+    }
 }

@@ -9,12 +9,13 @@ class Questoes extends Model
     protected $table = 'questoes';
     protected $fillable = ['questionarioID', 'valor', 'titulo', 'descricao', 'ano', 'contexto_historico', 'versao'];
     
+    protected $with = ['respostas'];
     public function questionario()
     {
         return $this->belongsTo(Questionario::class);
     }
     public function respostas()
     {
-        return $this->hasMany(AlternativasQuestoes::class);
+        return $this->hasMany(AlternativasQuestoes::class, 'questaoID', 'id');
     }
 }

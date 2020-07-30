@@ -2,7 +2,6 @@
 <header id="topnav">
     <div class="topbar-main">
         <div class="container-fluid">
-
             <!-- Logo container-->
             <div class="logo">
                 <a href="{{ route('welcome') }}" class="logo">
@@ -11,7 +10,6 @@
                 </a>
             </div>
             <!-- End Logo container-->
-
             <div class="menu-extras topbar-custom">
 
                 <ul class="list-unstyled topbar-right-menu float-right mb-0">
@@ -77,24 +75,25 @@
 
                 <ul class="navigation-menu">
 
-                    <li class="has-submenu {{ set_active('servicos') }}">
-                        <a href="{{route('servicos.index')}}">
-                            <i class="fa fa-handshake-o"></i>Serviços
+                    <li class="has-submenu {{ set_active('turmas') }}">
+                        <a href="{{route('minhas-turmas')}}">
+                            <i class="fa fa-handshake-o"></i>Turmas
                         </a>
 
                     </li>
 
-                    <li class="has-submenu {{ set_active('filiais') }}">
-                        <a href="{{route('filiais.index')}}">
-                            <i class="fa fa-building"></i>Filiais
-                        </a>
+                    <li class="has-submenu {{ set_active('aulas') }}">
+                        {{-- <a href="{{route('aulas.index')}}">
+                            <i class="fa fa-building"></i>Aulas
+                        </a> --}}
 
                     </li>
 
-                    <li class="has-submenu {{ set_active('clientes') }}">
-                        <a href="{{route('clientes.index')}}">
-                            <i class="fa fa-handshake-o"></i>Clientes
+                    <li class="has-submenu {{ set_active('questionarios') }}">
+                        <a href="{{route('questionarios.index')}}">
+                            <i class="fa fa-handshake-o"></i>Questionarios
                         </a>
+                        
 
                     </li>
 

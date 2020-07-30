@@ -1,4 +1,4 @@
-@extends('cliente.layouts.app')
+@extends('admin.layouts.dashboard.app')
 
 @section('content')
 
@@ -31,7 +31,7 @@
                     
                 </tbody>
             </table>
-            {{ $alunos->links() }}
+            {{-- {{ $alunos->links() }} --}}
     </div>
 </div>
 @endsection

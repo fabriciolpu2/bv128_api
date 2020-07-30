@@ -31,11 +31,11 @@
     @yield('content')
     @else
     <div id="app">
-        @include('layouts.dashboard._header')
+        @include('admin.layouts.dashboard._header')
         <div class="wrapper">
-
+            
             <div class="container-fluid">
-                    {{-- @if ($errors->any())
+                {{-- @if ($errors->any())
                     <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                         <ul>

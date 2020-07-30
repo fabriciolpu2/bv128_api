@@ -66,63 +66,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
     Route::post('/my-account', 'HomeController@myAccount')
         ->name('my.account.post');
 
-
-    // ---------------------------------------------------
-
-    Route::get('servicos', 'ServicoController@index')
-        ->name('servicos.index');
-
-    Route::get('servicos/create', 'ServicoController@create')
-        ->name('servicos.create');
-
-    Route::post('servicos/store', 'ServicoController@store')
-        ->name('servicos.store');
-
-    Route::post('servicos/{id}/update', 'ServicoController@update')
-        ->name('servicos.update');
-
-    Route::get('servicos/{id}/edit', 'ServicoController@edit')
-        ->name('servicos.edit');
-
-    Route::get('servicos/{id}/destroy', 'ServicoController@destroy')
-        ->name('servicos.destroy');
-
-    Route::get('filiais', 'FilialController@index')
-        ->name('filiais.index');
-
-    Route::get('filiais/create', 'FilialController@create')
-        ->name('filiais.create');
-
-    Route::post('filiais/store', 'FilialController@store')
-        ->name('filiais.store');
-
-    Route::post('filiais/{id}/update', 'FilialController@update')
-        ->name('filiais.update');
-
-    Route::get('filiais/{id}/edit', 'FilialController@edit')
-        ->name('filiais.edit');
-
-    Route::get('filiais/{id}/destroy', 'FilialController@destroy')
-        ->name('filiais.destroy');
-
-    Route::get('clientes', 'ClienteController@index')
-        ->name('clientes.index');
-
-    Route::get('clientes/create', 'ClienteController@create')
-        ->name('clientes.create');
-
-    Route::post('clientes/store', 'ClienteController@store')
-        ->name('clientes.store');
-
-    Route::post('clientes/{id}/update', 'ClienteController@update')
-        ->name('clientes.update');
-
-    Route::get('clientes/{id}/edit', 'ClienteController@edit')
-        ->name('clientes.edit');
-
-    Route::get('clientes/{id}/destroy', 'ClienteController@destroy')
-        ->name('clientes.destroy');
-
     Route::get('usuarios', 'UserController@index')
         ->middleware(['auth', 'role:desenvolvedor|administrador'])
         ->name('usuarios.index');
@@ -176,4 +119,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 Route::get('portal-bv128/alunos', 'AlunoController@index');
-Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas');
+Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
+Route::get('portal-bv128/turmas/{id}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
+Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
+Route::get('portal-bv128/questionario/{id}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
+Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
+Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');

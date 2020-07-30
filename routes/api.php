@@ -29,3 +29,4 @@ Route::get('/alternativas', 'AlternativasQuestoesController@index')->name('lista
 Route::get('/alternativas/{versaoLocal}', 'AlternativasQuestoesController@listaVersao')->name('lista-alternativas-versao');
 
 Route::get('/versao/{model}', 'ConfiguracaoController@show')->name('versao-model');
+Route::post('/historico/', 'AlunoController@historico');

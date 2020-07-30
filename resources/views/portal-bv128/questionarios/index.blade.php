@@ -5,14 +5,14 @@
     <div class="container">
         <div class="col-12 justify-content-center">
             <div class="row">
-                @foreach ($turmas as $turma)
+                @foreach ($questionarios as $q)
                 <div class="col d-flex justify-content-around">
                     <div class="card text-center" style="width: 18rem;">
-                        <img class="card-img-top" src="https://boavista.rr.gov.br/comum/code/MostrarImagem.php?C=Mjg2ODk%2C" alt="Card image cap">
+                        <img class="card-img-top" src="https://1.bp.blogspot.com/-HiiLWX6QdDM/W6lCk6oW9GI/AAAAAAAAFsA/Jf5lv6zPnqEmAsguFf-HjFYwR_Ha9biLwCLcBGAs/w1200-h630-p-k-no-nu/Fazenda%2BBoa%2BVista.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{$turma->nome}} | {{$turma->turno}}</h5>
-                            <p class="card-text">{{$turma->escola->nome}}</p>
-                            <a href="{{route('turmas.alunos', ['id'=> $turma->id])}}" class="btn btn-primary">Acessar Turma</a>
+                            <h5 class="card-title">{{$q->fase}}</h5>
+                            <p class="card-text"></p>
+                            <a href="{{route('questoes.lista', ['id'=> $q->id])}}" class="btn btn-primary">Abrir</a>
                         </div>
                     </div>
                 </div>
