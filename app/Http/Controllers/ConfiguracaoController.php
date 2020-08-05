@@ -47,6 +47,11 @@ class ConfiguracaoController extends Controller
     public function show($model)
     {
         $configuracao = Configuracao::where('model', $model)->first();
+
+        if ($model == 'historico') {
+            $updateS = $configuracao['updated_at'];
+            $configuracao['ultima_atualizacao'] = $updateS->getTimestamp();
+        }
         return json_encode($configuracao);
     }
 
