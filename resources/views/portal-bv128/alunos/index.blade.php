@@ -23,7 +23,7 @@
                         <td>{{$aluno->matricula}}</td>
                         <td>{{$aluno->nome}}</td>
                         <td>{{$aluno->pontuacao}}</td>
-                        <td>{{$aluno->missoes_concluidas}}</td>
+                        <td>{{$aluno->historico->missoes_concluidas}}</td>
                         <td>{{$aluno->turma->escola->nome}}</td>
                         <td>{{$aluno->turma->nome}}</td>
                     </tr>

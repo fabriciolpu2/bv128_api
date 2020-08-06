@@ -24,7 +24,8 @@ class TurmaController extends Controller
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
     public function alunos($turma){
-        $alunos = Turma::find($turma)->alunos;
+        $alunos = Turma::find($turma)->alunos->fresh('historico');
+        //dd($alunos);
         return view('portal-bv128/alunos/index', compact('alunos'));
     }
 }

@@ -15,4 +15,9 @@ class Aluno extends Model
     {
         return $this->belongsTo(Turma::class);
     }
+
+    public function historico()
+    {
+        return $this->hasOne(AlunoHistorico::class, 'aluno_id', 'id');
+    }
 }
