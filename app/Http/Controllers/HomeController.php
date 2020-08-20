@@ -79,7 +79,7 @@ class HomeController extends Controller
      */
     public function showChangePasswordForm()
     {
-        return view('admin.auth.passwords.change-password');
+        return view('auth.passwords.change-password');
     }
 
     /**
@@ -91,14 +91,14 @@ class HomeController extends Controller
 
             return redirect()->back()->with(
                 "error",
-                "Your current password does not match the password you provided. Please try again."
+                "Sua senha atual não coincide com a senha informada. Tente novamente."
             );
         }
         if (strcmp($request->get('current_password'), $request->get('new_password')) === 0) {
 
             return redirect()->back()->with(
                 "error",
-                "The new password cannot be the same as your current password. Please choose a different password."
+                "A senha informada é igual a antiga. Porfavor escolha uma senha diferente."
             );
         }
         $validatedData = $request->validate([
@@ -109,7 +109,7 @@ class HomeController extends Controller
         $user = Auth::user();
         $user->password = bcrypt($request->get('new_password'));
         $user->save();
-        return redirect()->back()->with("success", "Password changed successfully!");
+        return redirect()->back()->with("success", "Senha alterada com sucesso!");
     }
 
 
@@ -117,16 +117,16 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         if ($request->isMethod('post')) {
-            //dd($request->all());
+
             $this->validate($request, [
                 'name' => ['required', 'string', 'max:255'],
-                'mobile' => ['required', 'string', 'max:15', 'min:15'],
+                'mobile' => ['nullable', 'string', 'max:15', 'min:15'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id]
             ]);
 
             $user->fill($request->all());
             $user->save();
-            return redirect()->back()->with("success", "Update successful");
+            return redirect()->back()->with("success", "Atualizado com sucesso");
         }
         return view('auth.account')->with('user', $user);
     }

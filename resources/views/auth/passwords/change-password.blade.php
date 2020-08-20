@@ -78,7 +78,7 @@
                                     <button type="submit" class="btn btn-purple block">
                                         Alterar Senha
                                     </button>
-                                    <a href="{{route('my.account.get')}}" class="btn btn-danger block">Go Back</a>
+                                    <a href="{{route('my.account.get')}}" class="btn btn-danger block">Voltar</a>
                                 </div>
                             </div>
                         </form>

@@ -22,13 +22,13 @@ class UsersSeeder extends Seeder
 
         $dev->syncRoles(['desenvolvedor']);
 
-        $anunciante = User::firstOrCreate([
+        $dev = User::firstOrCreate([
             'name' => 'Administrador',
             'email' => 'admin@mail.com',
             'password' => bcrypt($password = 'password'),
         ]);
 
-        $anunciante->syncRoles(['administrador']);
+        $dev->syncRoles(['administrador']);
 
         $editor = User::firstOrCreate([
             'name' => 'Editor',
@@ -45,6 +45,8 @@ class UsersSeeder extends Seeder
         ]);
 
         $professor->syncRoles(['professor']);
+
+        
 
     }
 }

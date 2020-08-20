@@ -17,8 +17,10 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect nav-user" data-toggle="dropdown" href="#"
                             role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="/images/d/users/avatar-1.jpg" alt="user" class="rounded-circle"> <span
-                                class="ml-1 pro-user-name">{{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
+                            {{-- <img src="/images/d/users/avatar-1.jpg" alt="user" class="rounded-circle">  --}}
+                            <span class="ml-1 pro-user-name">
+                                {{ Auth::user()->name }}
+                                <i class="mdi mdi-chevron-down"></i>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -78,21 +80,29 @@
 
                     <li class="has-submenu {{ set_active('turmas') }}">
                         <a href="{{route('minhas-turmas')}}">
-                            <i class="fa fa-handshake-o"></i>Turmas
+                            <i class="mdi mdi-book"></i>Turmas
                         </a>
 
                     </li>
 
                     <li class="has-submenu {{ set_active('aulas') }}">
                         <a href="{{route('alunos.index')}}">
-                        <i class="fa fa-building"></i>Alunos
+                            <i class="mdi  mdi-account-multiple"></i>Alunos
                         </a>
 
                     </li>
 
                     <li class="has-submenu {{ set_active('questionarios') }}">
                         <a href="{{route('questionarios.index')}}">
-                            <i class="fa fa-handshake-o"></i>Questionarios
+                            <i class="mdi mdi-pencil-box"></i>Questionarios
+                        </a>
+
+
+                    </li>
+
+                    <li class="has-submenu {{ set_active('aulas') }}">
+                        <a href="#">
+                            <i class="mdi mdi-library"></i>Aulas
                         </a>
 
 
@@ -101,7 +111,7 @@
                     @if(Auth::user()->hasRole(['desenvolvedor','administrador']))
                     <li class="pull-right has-submenu {{ set_active('usuarios*') }}">
                         <a href="{{ route('usuarios.index') }}">
-                            <i class="icon-equalizer"></i>Usuários
+                            <i class="mdi mdi-account-key"></i>Usuários
                         </a>
                     </li>
                     @endif
