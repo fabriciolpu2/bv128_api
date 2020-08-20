@@ -14,17 +14,22 @@ class TurmaController extends Controller
         return json_encode($turmas);
     }
 
-    public function index() {
+    public function index()
+    {
         $turmas = Turma::all();
         return json_encode($turmas);
     }
 
-    public function minhasTurmas() {
-        $turmas = Auth::user()->turmas;
+    public function minhasTurmas()
+    {
+        $turmas = Auth::user()->turmas()->latest()->paginate();
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
-    public function alunos($turma){
-        $alunos = Turma::find($turma)->alunos;
-        return view('portal-bv128/alunos/index', compact('alunos'));
+
+    public function alunos(Turma $turma)
+    {
+        $alunos =$turma->alunos()->paginate();
+
+        return view('portal-bv128/turmas/alunos', compact('alunos', 'turma'));
     }
 }

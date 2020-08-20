@@ -16,7 +16,7 @@ class QuestionarioController extends Controller
     }
     
     public function index() {
-        $questionarios = Questionario::all();
+        $questionarios = Questionario::lastest()->paginate();
         return json_encode($questionarios);
     }
 
@@ -24,14 +24,17 @@ class QuestionarioController extends Controller
         $questionarios = Questionario::all();
         return view('portal-bv128/questionarios/index', compact('questionarios'));
     }
-    public function questoes($id) {
-        $questoes = Questionario::find($id)->questoes;
+
+    public function questoes(Questionario $questionario) {
+        $questoes = $questionario->questoes;
         //dd($questoes);
-        return view('portal-bv128/questoes/index', compact('questoes', 'id'));
+        return view('portal-bv128/questoes/index', compact('questoes', 'questionario'));
     }
+
     public function questoesCreate($id) {
         return view('portal-bv128/questoes/create', compact('id'));
     }
+
     public function questoesStore(Request $request, $id) {
         $inputs = $request->all();
         $inputs['questionarioID'] = $id;

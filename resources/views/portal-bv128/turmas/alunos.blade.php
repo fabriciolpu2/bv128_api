@@ -3,30 +3,30 @@
 @section('content')
 
 <div class="row">
-    <div class="col-lg-5 col-md-7 mr-auto text-left mt-5">
-        <h1 class="title">Lista de Alunos</h1>
-        <h6 class="category">Aqui está a lista de todos os alunos cadastrados</h6>
+    <div class="col-lg-6 col-md-7 mr-auto text-left mt-5">
+        <h1 class="title">Lista de Alunos da Turma </h1>
+        <h5 class="category">Aqui está a lista de todos os alunos cadastrados na turma <strong> {{ $turma->nome }}
+            </strong> da escola <strong>{{ $turma->escola->nome }} </strong></h5>
         <br>
 
     </div>
 </div>
 
-
-<div class="row text-center m-t-50">
+<div style="margin-top: 30px">
     <div class="col-lg-12">
         <div class="card-box">
-            <h4 class="header-title mb-4">
-                Alunos
-                ({{ $alunos->total()}})
-            </h4>
-            {{-- <a href="{{ route('usuarios.create') }}" class="pull-right btn btn-purple w-md waves-effect waves-light
-            mb-4">
-            <i class="mdi mdi-plus-circle"></i>
-            Novo usuário
-            </a> --}}
+
+            <div class="row align-items-center">
+                <div class="col-8">
+                    <h3 class="mb-10">Alunos</h3>
+                </div>
+                <div class="col-4 text-right">
+                    <a class="btn btn-primary" href="{{route('minhas-turmas')}}" role="button">Voltar</a>
+                </div>
+            </div>
             <div class="toolbar">
                 <!--        Here you can write extra buttons/actions for the toolbar              -->
-                <div class="text-left ml-50 mb-20">
+                <div class="text-left mb-20">
                     <h5>Exibindo {{ $alunos->firstItem() }} até {{ $alunos->lastItem()}} de {{ $alunos->total() }}
                         alunos</h5>
                 </div>

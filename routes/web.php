@@ -37,7 +37,7 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
         return view("cliente.projetos.index");
     })->middleware(['auth', 'role:professor'])->name('projeto.bv-128');
 
-    Route::get('/projetos/bv-128/aulas', function(){
+    Route::get('/projetos/bv-128/aulas', function () {
         return view("cliente.aulas.index");
     })->name('projeto.aulas');
 });
@@ -93,6 +93,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
     Route::post('bloquear', 'UserController@bloquear')
         ->middleware(['auth', 'role:desenvolvedor|administrador'])
         ->name('bloquear');
+
+
+
+    Route::get('portal-bv128/alunos', 'AlunoController@index')->name('alunos.index');
+    Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
+    Route::get('portal-bv128/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
+    Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
+    Route::get('portal-bv128/questionario/{questionario}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
+    Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
+    Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
 });
 
 
@@ -116,12 +126,3 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
-
-Route::get('portal-bv128/alunos', 'AlunoController@index');
-Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
-Route::get('portal-bv128/turmas/{id}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
-Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
-Route::get('portal-bv128/questionario/{id}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
-Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
-Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');

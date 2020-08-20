@@ -39,7 +39,8 @@
                                 <i class="fi-power"></i> <span>{{__('labels.Logout')}}</span>
                             </a>
 
-                            <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST"
+                                style="display: none;">
                                 {{ csrf_field() }}
                             </form>
 
@@ -83,9 +84,9 @@
                     </li>
 
                     <li class="has-submenu {{ set_active('aulas') }}">
-                        {{-- <a href="{{route('aulas.index')}}">
-                            <i class="fa fa-building"></i>Aulas
-                        </a> --}}
+                        <a href="{{route('alunos.index')}}">
+                        <i class="fa fa-building"></i>Alunos
+                        </a>
 
                     </li>
 
@@ -93,16 +94,16 @@
                         <a href="{{route('questionarios.index')}}">
                             <i class="fa fa-handshake-o"></i>Questionarios
                         </a>
-                        
+
 
                     </li>
 
                     @if(Auth::user()->hasRole(['desenvolvedor','administrador']))
-                        <li class="pull-right has-submenu {{ set_active('usuarios*') }}">
-                            <a href="{{ route('usuarios.index') }}">
-                                <i class="icon-equalizer"></i>Usuários
-                            </a>
-                        </li>
+                    <li class="pull-right has-submenu {{ set_active('usuarios*') }}">
+                        <a href="{{ route('usuarios.index') }}">
+                            <i class="icon-equalizer"></i>Usuários
+                        </a>
+                    </li>
                     @endif
 
                 </ul>
