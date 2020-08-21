@@ -13,9 +13,6 @@
 
 use App\User;
 
-
-
-
 //Auth::routes();
 
 
@@ -32,12 +29,13 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
     // Route::get('/projetos/bv-128', function () {
     //     return view("cliente.projetos.index");
     // })->name('projeto.bv-128');
+    
     // bora tornar essa pagina pra controle de conteudo com acesso do professor
     Route::get('/projetos/bv-128', function () {
         return view("cliente.projetos.index");
     })->middleware(['auth', 'role:professor'])->name('projeto.bv-128');
 
-    Route::get('/projetos/bv-128/aulas', function(){
+    Route::get('/projetos/bv-128/aulas', function () {
         return view("cliente.aulas.index");
     })->name('projeto.aulas');
 });
@@ -46,53 +44,81 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function () {
 
     Route::get('/welcome', 'WelcomeController@welcome')->name('welcome');
+
     // Authentication Routes...
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login')->name('loginpost');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::group(['middleware' => ['auth', 'role:professor|editor|administrador|desenvolvedor']], function () {
 
 
+        Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/change-password', 'HomeController@showChangePasswordForm');
+        Route::get('/change-password', 'HomeController@showChangePasswordForm');
 
-    Route::post('/change-password', 'HomeController@changePassword')
-        ->name('change-password');
+        Route::post('/change-password', 'HomeController@changePassword')
+            ->name('change-password');
 
-    Route::get('/my-account', 'HomeController@myAccount')
-        ->name('my.account.get');
+        Route::get('/my-account', 'HomeController@myAccount')
+            ->name('my.account.get');
 
-    Route::post('/my-account', 'HomeController@myAccount')
-        ->name('my.account.post');
+        Route::post('/my-account', 'HomeController@myAccount')
+            ->name('my.account.post');
 
-    Route::get('usuarios', 'UserController@index')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.index');
+        /**
+         * Controle de usuários
+         */
+        Route::group(['middleware' => ['auth', 'role:administrador|desenvolvedor']], function () {
 
-    Route::get('usuarios/create', 'UserController@create')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.create');
+            Route::get('usuarios', 'UserController@index')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.index');
 
-    Route::post('usuarios/store', 'UserController@store')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.store');
+            Route::get('usuarios/create', 'UserController@create')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.create');
 
-    Route::post('usuarios/{id}/update', 'UserController@update')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.update');
+            Route::post('usuarios/store', 'UserController@store')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.store');
 
-    Route::get('usuarios/{id}/edit', 'UserController@edit')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.edit');
+            Route::post('usuarios/{id}/update', 'UserController@update')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.update');
 
-    Route::get('usuarios/{id}/destroy', 'UserController@destroy')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('usuarios.destroy');
+            Route::get('usuarios/{id}/edit', 'UserController@edit')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.edit');
 
-    Route::post('bloquear', 'UserController@bloquear')
-        ->middleware(['auth', 'role:desenvolvedor|administrador'])
-        ->name('bloquear');
+            Route::get('usuarios/{id}/destroy', 'UserController@destroy')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('usuarios.destroy');
+
+            Route::post('bloquear', 'UserController@bloquear')
+                ->middleware(['auth', 'role:desenvolvedor|administrador'])
+                ->name('bloquear');
+        });
+
+        /**
+         * Controle do portal, acesso do professor
+         */
+        Route::get('portal-bv128/alunos', 'AlunoController@index')->name('alunos.index');
+        Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
+        Route::get('portal-bv128/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
+        Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
+        Route::get('portal-bv128/questionario/{questionario}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
+        Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
+        Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
+    });
+
+
+    /**
+     * Aulas Resource
+     */
+
+     Route::resource('aulas', 'AulaController')->middleware('role:professor|administrador');
 });
 
 
@@ -100,6 +126,20 @@ Route::get('/contato', 'HomeController@contact')->name('contato');
 
 Route::post('/contato', 'HomeController@sendMessage')->name('contato.form');
 
+
+
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 // Route::get('/user-create', function () {
 //     User::firstOrCreate([
@@ -110,18 +150,3 @@ Route::post('/contato', 'HomeController@sendMessage')->name('contato.form');
 
 //     echo 'feito melhor que perfeito by Joao Clineu';
 // });
-
-// Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
-
-Route::get('portal-bv128/alunos', 'AlunoController@index');
-Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
-Route::get('portal-bv128/turmas/{id}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
-Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
-Route::get('portal-bv128/questionario/{id}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
-Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
-Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');

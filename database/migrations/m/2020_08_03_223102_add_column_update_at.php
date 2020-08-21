@@ -14,7 +14,7 @@ class AddColumnUpdateAt extends Migration
     public function up()
     {
         Schema::table('configuracaos', function (Blueprint $table) {
-            //$table->dateTime('update_at', 0)->nullable();
+            $table->dateTime('update_at', 0)->nullable();
         });
     }
 

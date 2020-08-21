@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Aula extends Model
 {
     protected $table = 'aulas';
-    
+
     // na versao final deverao ter, thumbnail(imagem), titulo_aula
 
-    protected $fillable = [
-        'nome_aula'
-    ];
+    protected $guarded = [];
 
     public function materiais()
     {

@@ -43,7 +43,7 @@ class LoginController extends Controller
     {
 
         if($user->hasRole(['desenvolvedor', 'administrador'])){
-            return redirect()->route('servicos.index');
+            return redirect()->route('usuarios.index');
         }elseif($user->hasRole('professor')){
             return redirect()->route('projeto.bv-128');
         }else{

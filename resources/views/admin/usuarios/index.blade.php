@@ -9,102 +9,107 @@
             <h4 class="header-title mb-4">
                 Usuários
                 ({{ $usuarios->total()}})
-			</h4>
-            <a href="{{ route('usuarios.create') }}" class="pull-right btn btn-purple w-md waves-effect waves-light mb-4">
-                    <i class="mdi mdi-plus-circle"></i>
-                    Novo usuário
-                </a>
-			@if ($usuarios->count() > 0)
-				<div class="table-responsive">
-					<table class="table table-hover table-centered m-0">
+            </h4>
+            <a href="{{ route('usuarios.create') }}"
+                class="pull-right btn btn-purple w-md waves-effect waves-light mb-4">
+                <i class="mdi mdi-plus-circle"></i>
+                Novo usuário
+            </a>
+            @if ($usuarios->count() > 0)
+            <div class="table-responsive">
+                <table class="table table-hover table-centered m-0">
 
-						<thead>
-							<tr>
-								<th><i class="fa fa-user"></i> Nome</th>
-								<th><i class="fa fa-at"></i> Email</th>
-								<th>Papéis</th>
-								<th>Status</th>
-								<th>Ações</th>
-							</tr>
-						</thead>
-						<tbody>
-                            @foreach ($usuarios as $usuario)
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-user"></i> Nome</th>
+                            <th><i class="fa fa-at"></i> Email</th>
+                            <th>Papéis</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($usuarios as $usuario)
 
-                                <tr>
-                                    <td>
+                        <tr>
+                            <td>
 
-                                        {{$usuario->name}}
-                                    </td>
+                                {{$usuario->name}}
+                            </td>
 
-                                    <td>
+                            <td>
 
-                                        {{ $usuario->email }}
-                                    </td>
+                                {{ $usuario->email }}
+                            </td>
 
-                                    <td>
-                                        @foreach ($usuario->roles->pluck('name') as $role)
-                                            <p class=" badge badge-info">
-                                                {{ $role }}
-                                            </p>
-                                        @endforeach
-                                    </td>
+                            <td>
+                                @foreach ($usuario->roles->pluck('name') as $role)
+                                <p class=" badge badge-info">
+                                    {{ $role }}
+                                </p>
+                                @endforeach
+                            </td>
 
-                                    <td>
-                                            @if(!$usuario->isBlocked())
-                                                <p class="badge badge-purple">Ativo</p>
-                                            @else
-                                                <p class="badge badge-danger">Bloqueado</p>
-                                            @endif
-                                        </td>
+                            <td>
+                                @if(!$usuario->isBlocked())
+                                <p class="badge badge-purple">Ativo</p>
+                                @else
+                                <p class="badge badge-danger">Bloqueado</p>
+                                @endif
+                            </td>
 
-                                    <td>
-                                        <div class="btn-group" role="group">
-                                            <a class="btn btn-icon waves-effect btn-light btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="icon-options-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu">
-                                                <a href="{{ route('usuarios.edit', ['id' => $usuario->id])}}" class="dropdown-item">
-                                                    Editar
-                                                </a>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a class="btn btn-icon waves-effect btn-light btn-sm" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon-options-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a href="{{ route('usuarios.edit', ['id' => $usuario->id])}}"
+                                            class="dropdown-item">
+                                            Editar
+                                        </a>
 
-                                                <blocked-component anunciante-object="{{$usuario}}" v-bind:bloqueado="{{ $usuario->isBlocked() ? 'true':'false' }}"></blocked-component>
+                                        <blocked-component anunciante-object="{{$usuario}}"
+                                            v-bind:bloqueado="{{ $usuario->isBlocked() ? 'true':'false' }}">
+                                        </blocked-component>
 
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
 
-							@endforeach
+                        @endforeach
 
-						</tbody>
-					</table>
+                    </tbody>
+                </table>
 
 
-				</div>
+            </div>
 
-				<div class="m-t-30" style="display: inline-grid;">
-					{{ $usuarios->links() }}
-                </div>
+            <div class="m-t-30" style="display: inline-grid;">
+                {{ $usuarios->links() }}
+            </div>
 
             @else
 
-                <div class="alert alert-dark" role="alert">
-                    <h4 class="alert-heading">
-                        <i class="mdi mdi-timer-sand-empty"></i>
-                        Nenhum novo usuário encontrado!
-                    </h4>
-                    <p>
-                        Novos usuários cadastrados aparecerão aqui!
-                    </p>
-                    <hr>
-                    <p class="mb-0">
-                        Esta tela dá acesso à edição e bloqueio de usuários.
-                    </p>
-                </div>
+            <div class="alert alert-dark" role="alert">
+                <h4 class="alert-heading">
+                    <i class="mdi mdi-timer-sand-empty"></i>
+                    Nenhum novo usuário encontrado!
+                </h4>
+                <p>
+                    Novos usuários cadastrados aparecerão aqui!
+                </p>
+                <hr>
+                <p class="mb-0">
+                    Esta tela dá acesso à edição e bloqueio de usuários.
+                </p>
+            </div>
 
             @endif
 
-		</div>
+        </div>
 
     </div>
 </div>
