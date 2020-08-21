@@ -52,7 +52,7 @@
                         <p>{{ Session::get('success') }}</p>
                     </div>
                 @endif --}}
-                @if (Auth::user()->isBlocked())
+                {{-- @if (Auth::user()->isBlocked())
                         <div class="row text-center m-t-20">
                             <div class="col-12">
                                 <div class="card-box">
@@ -63,9 +63,9 @@
                                 </div>
                             </div>
                         </div>
-                @else
+                @else --}}
                     @yield('content')
-                @endif
+                {{-- @endif --}}
             </div>
 
             {{-- <vue-snotify></vue-snotify> --}}

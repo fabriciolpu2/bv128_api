@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aluno;
 use App\Models\AlunoHistorico;
+use App\Models\AlunoRespostas;
 use App\Models\Configuracao;
 use Illuminate\Http\Request;
 use Auth;
@@ -39,6 +40,25 @@ class AlunoController extends Controller
             
         }
         $config = Configuracao::where('model', 'historico')->increment('versao');
+
+        return response()->json([
+            'alunos' => $input,
+            'message' => 'sucesso'
+            ], 200);
+    }
+    public function alunosQuestoes(Request $request){
+        $input = $request->all();
+        $r = $input['Items'];
+        foreach ($input['Items'] as $item) {
+            $res = AlunoRespostas::where('aluno_id', $item['aluno_id'])->where('resposta_id', $item['resposta_id'])->first();
+            if($res) {
+                $res->update($item);
+            } else {
+                AlunoRespostas::create($item);
+            }
+            
+        }
+        $config = Configuracao::where('model', 'alunos_respostas')->increment('versao');
 
         return response()->json([
             'alunos' => $input,

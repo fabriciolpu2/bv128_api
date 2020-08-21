@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Configuracao;
+use App\Models\AlunoRespostas;
 use Illuminate\Http\Request;
 
-class ConfiguracaoController extends Controller
+class AlunoRespostasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,27 +41,21 @@ class ConfiguracaoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Configuracao  $configuracao
+     * @param  \App\Models\AlunoRespostas  $alunoRespostas
      * @return \Illuminate\Http\Response
      */
-    public function show($model)
+    public function show(AlunoRespostas $alunoRespostas)
     {
-        $configuracao = Configuracao::where('model', $model)->first();
-
-        if ($model == 'historico' || $model == 'alunos_respostas') {
-            $updateS = $configuracao['updated_at'];
-            $configuracao['ultima_atualizacao'] = $updateS->getTimestamp();
-        }
-        return json_encode($configuracao);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Configuracao  $configuracao
+     * @param  \App\Models\AlunoRespostas  $alunoRespostas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Configuracao $configuracao)
+    public function edit(AlunoRespostas $alunoRespostas)
     {
         //
     }
@@ -70,10 +64,10 @@ class ConfiguracaoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Configuracao  $configuracao
+     * @param  \App\Models\AlunoRespostas  $alunoRespostas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Configuracao $configuracao)
+    public function update(Request $request, AlunoRespostas $alunoRespostas)
     {
         //
     }
@@ -81,10 +75,10 @@ class ConfiguracaoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Configuracao  $configuracao
+     * @param  \App\Models\AlunoRespostas  $alunoRespostas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Configuracao $configuracao)
+    public function destroy(AlunoRespostas $alunoRespostas)
     {
         //
     }
