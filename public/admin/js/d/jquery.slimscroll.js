@@ -513,7 +513,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Development\GitLab\canaime\resources\admin\js\dashboard\jquery.slimscroll.js */"./resources/admin/js/dashboard/jquery.slimscroll.js");
+module.exports = __webpack_require__(/*! C:\Users\igora\Projetos\canaime\resources\admin\js\dashboard\jquery.slimscroll.js */"./resources/admin/js/dashboard/jquery.slimscroll.js");
 
 
 /***/ })

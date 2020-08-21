@@ -49637,7 +49637,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\kamie\Documents\projetos\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
+module.exports = __webpack_require__(/*! C:\Users\igora\Projetos\canaime\resources\admin\js\dashboard\app.js */"./resources/admin/js/dashboard/app.js");
 
 
 /***/ })

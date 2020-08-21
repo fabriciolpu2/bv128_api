@@ -92,6 +92,7 @@
     {!!Theme::js('admin/js/d/jquery.slimscroll.js')!!}
     {!!Theme::js('admin/js/d/jquery.app.js')!!}
     @yield('js')
+    @stack('scripts')
 </body>
 
 </html>

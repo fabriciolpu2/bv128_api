@@ -112,6 +112,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
         Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
         Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
     });
+
+
+    /**
+     * Aulas Resource
+     */
+
+     Route::resource('aulas', 'AulaController')->middleware('role:professor|administrador');
 });
 
 
@@ -129,6 +136,10 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 // Route::get('/user-create', function () {
 //     User::firstOrCreate([

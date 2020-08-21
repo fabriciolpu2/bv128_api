@@ -101,7 +101,7 @@
                     </li>
 
                     <li class="has-submenu {{ set_active('aulas') }}">
-                        <a href="#">
+                        <a href="{{ route('aulas.index') }}">
                             <i class="mdi mdi-library"></i>Aulas
                         </a>
 
