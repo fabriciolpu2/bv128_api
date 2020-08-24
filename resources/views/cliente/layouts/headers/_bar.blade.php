@@ -34,11 +34,19 @@
                 Manual de utilização
             </a>
         </li>
+        @role('professor')
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('aulas.index') }}">
                 Aulas
             </a>
         </li>
+        @else
+        <li class="nav-item active">
+            <a class="nav-link" href="projetos/bv-128">
+                Aulas
+            </a>
+        </li>
+        @endrole
         {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
         BNCC
@@ -78,12 +86,14 @@
                 Projetos
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('login')}}">
-                EAD
+        @role('aluno')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('projeto.bv-128')}}">
+                Aulas
             </a>
         </li>
-
+        @else
+        @endrole
 
         <li class="nav-item">
             <a class="nav-link" href="#sobre">

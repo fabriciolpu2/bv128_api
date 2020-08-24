@@ -29,11 +29,10 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
     // Route::get('/projetos/bv-128', function () {
     //     return view("cliente.projetos.index");
     // })->name('projeto.bv-128');
-    
+
     // bora tornar essa pagina pra controle de conteudo com acesso do professor
-    Route::get('/projetos/bv-128', function () {
-        return view("cliente.projetos.index");
-    })->middleware(['auth', 'role:professor|aluno'])->name('projeto.bv-128');
+    Route::get('/projetos/bv-128', 'AulaController@projetosBv128')->middleware(['auth', 'role:professor|aluno'])->name('projeto.bv-128');
+    Route::get('/projetos/bv-128/{aula}', 'AulaController@projetoBv128')->middleware(['auth', 'role:professor|aluno'])->name('publico.aula.show');
 
     Route::get('/projetos/bv-128/aulas', function () {
         return view("cliente.aulas.index");
@@ -118,7 +117,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
      * Aulas Resource
      */
 
-     Route::resource('aulas', 'AulaController')->middleware('role:professor|administrador');
+    Route::resource('aulas', 'AulaController')->middleware('role:professor|administrador');
 });
 
 

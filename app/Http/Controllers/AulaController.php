@@ -39,11 +39,11 @@ class AulaController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->all();
-        
+
         $validator = Validator::make($attributes, [
             'nome' => ['required', 'string', 'unique:aulas,nome'],
-            'descricao' => ['required', 'string', 'min:10', 'max:200'],
-            'corpo' => ['required', 'string', 'max:600'],
+            'descricao' => ['required', 'string', 'min:10', 'max:250'],
+            'corpo' => ['required', 'string'],
             'imagem' => ['required']
         ]);
 
@@ -93,11 +93,11 @@ class AulaController extends Controller
         $aula = Aula::findOrFail($id);
 
         $attributes = $request->all();
-        
+
         $validator = Validator::make($attributes, [
             'nome' => ['required', 'string', "unique:aulas,nome,$aula->id"],
-            'descricao' => ['required', 'string', 'min:10', 'max:200'],
-            'corpo' => ['required', 'string', 'max:600'],
+            'descricao' => ['required', 'string', 'min:10', 'max:250'],
+            'corpo' => ['required', 'string'],
             'imagem' => ['required']
         ]);
 
@@ -108,7 +108,7 @@ class AulaController extends Controller
         $attributes['thumb'] = $this->makeThumb($attributes['imagem']);
 
         $aula->update($attributes);
-        
+
         $aula->save();
 
         return redirect()->route('aulas.index')->with('success', 'Aula ' . $aula->nome . ' editada com sucesso !');
@@ -127,7 +127,6 @@ class AulaController extends Controller
         $aula->delete();
 
         return redirect()->route('aulas.index')->with('success', 'Aula ' . $aula->nome . ' deletada com sucesso !');
-
     }
 
 
@@ -143,5 +142,24 @@ class AulaController extends Controller
         $thumbnail = $directory . '/thumbs/' . end($thumbnail);
 
         return $thumbnail;
+    }
+
+
+    /**
+     * Retorna os projetos em forma de blog para a página /projetos/bv-128 
+     */
+    public function projetosBv128()
+    {
+        $aulas = Aula::oldest()->get();
+
+        return view("cliente.projetos.index", compact('aulas'));
+    }
+
+    /**
+     * Exibe um determinado projeto para o aluno ou professor
+     */
+    public function projetoBv128(Aula $aula)
+    {
+        return view("cliente.projetos.aulas.show", compact('aula'));
     }
 }

@@ -32,9 +32,9 @@ class HomeController extends Controller
      */
     public function index($status = null)
     {
-        $servicos = $status !== null ? Servico::where('ativo', $status)->paginate(8) : Servico::paginate(8);
+        // $servicos = $status !== null ? Servico::where('ativo', $status)->paginate(8) : Servico::paginate(8);
 
-        return view('admin.servicos.index', compact('servicos', 'status'));
+        // return view('admin.servicos.index', compact('servicos', 'status'));
     }
 
     /**
