@@ -93,6 +93,11 @@
             </a>
         </li>
         @else
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('login')}}">
+                EAD
+            </a>
+        </li>
         @endrole
 
         <li class="nav-item">
@@ -108,9 +113,36 @@
                 Contato
             </a>
         </li>
+        @if(Auth::check())
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="false" aria-expanded="false">
+                {{-- <img src="/images/d/users/avatar-1.jpg" alt="user" class="rounded-circle">  --}}
+                <span class="ml-1 pro-user-name">
+                    {{ Auth::user()->name }}
+                    <i class="mdi mdi-chevron-down"></i>
+                </span>
+            </a>
+            <div class="dropdown-menu  profile-dropdown ">
 
+                <!-- item-->
+                <a href="{{ url('/admin/logout') }}" class="dropdown-item notify-item"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fi-power"></i> <span>{{__('labels.Logout')}}</span>
+                </a>
+
+                <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+
+            </div>
+        </li>
+        @endif
 
     </ul>
+
+
+
     @if (!(Auth::user()))
 
     <ul class="nav navbar-nav navbar-right">
