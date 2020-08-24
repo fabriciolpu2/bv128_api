@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-6 collapse-brand">
                 @if (!(Auth::user()))
-                    <a href="{{route('home.cliente')}}">
-                        Canaimé
-                        <span> Studio </span>
-                    </a>
+                <a href="{{route('home.cliente')}}">
+                    Canaimé
+                    <span> Studio </span>
+                </a>
                 @else
-                    <a href="{{route('projeto.bv-128')}}">
-                        Canaimé
-                        <span> Studio </span>
-                    </a>
+                <a href="{{route('projeto.bv-128')}}">
+                    Canaimé
+                    <span> Studio </span>
+                </a>
                 @endif
             </div>
             <div class="col-6 collapse-close text-right">
@@ -41,84 +41,84 @@
             </li>
             {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
-                    BNCC
-                </a>
-            </li> --}}
-            {{-- <li class="nav-item active">
+        BNCC
+        </a>
+        </li> --}}
+        {{-- <li class="nav-item active">
                 <a class="nav-link" href="#galeria">
                     Galeria
                 </a>
             </li> --}}
-            {{-- <li class="nav-item active">
+        {{-- <li class="nav-item active">
                 <a class="nav-link" href="{{route('home.cliente')}}">
-                    Calendário
-                </a>
-            </li> --}}
+        Calendário
+        </a>
+        </li> --}}
 
-            <li class="nav-item">
+        <li class="nav-item">
 
-                <a href="{{ url('/admin/logout') }}" class="nav-link"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Sair
-                </a>
-                <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
+            <a href="{{ url('/admin/logout') }}" class="nav-link"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Sair
+            </a>
+            <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </li>
 
         @else
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('home.cliente')}}">
-                    Home
-                </a>
-            </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route('home.cliente')}}">
+                Home
+            </a>
+        </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#projetos">
-                    Projetos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('login')}}">
-                    EAD
-                </a>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="#sobre">
-                    Sobre
-                </a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#projetos">
+                Projetos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">
+                EAD
+            </a>
+        </li>
 
 
-            @endif
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('contato')}}">
-                        Contato
-                    </a>
-                </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#sobre">
+                Sobre
+            </a>
+        </li>
+
+
+        @endif
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('contato')}}">
+                Contato
+            </a>
+        </li>
 
 
     </ul>
     @if (!(Auth::user()))
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </li>
-        </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+    </ul>
     @endif
 </div>
