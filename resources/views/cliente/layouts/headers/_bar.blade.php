@@ -25,7 +25,7 @@
     <ul class="navbar-nav mx-auto">
         @if(Auth::user() && Auth::user()->hasRole('professor'))
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('projeto.bv-128')}}">
+                <a class="nav-link" href="{{route('minhas-turmas')}}">
                     BV128
                 </a>
             </li>
