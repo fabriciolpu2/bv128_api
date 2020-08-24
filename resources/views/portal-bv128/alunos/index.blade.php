@@ -2,38 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
-@include('cliente.layouts.headers.aulas')
-
-<div class="projects-3">
-    <div class="container">
-            <table class="table table-light">
-                <thead class="thead-light">
-                    <tr>
-                        <th>matricula</th>
-                        <th>nome</th>
-                        <th>pontuação</th>
-                        <th>Missões concluidas</th>
-                        <th>Escola</th>
-                        <th>Turma</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($alunos as $aluno)
-                    <tr>
-                        <td>{{$aluno->matricula}}</td>
-                        <td>{{$aluno->nome}}</td>
-                        <td>{{$aluno->pontuacao}}</td>
-                        <td>{{$aluno->historico->missoes_concluidas}}</td>
-                        <td>{{$aluno->turma->escola->nome}}</td>
-                        <td>{{$aluno->turma->nome}}</td>
-                    </tr>
-                    @endforeach
-                    
-                </tbody>
-            </table>
-            {{-- {{ $alunos->links() }} --}}
-=======
 <div class="row">
     <div class="col-lg-5 col-md-7 mr-auto text-left mt-5">
         <h1 class="title">Lista de Alunos</h1>
@@ -121,7 +89,6 @@
 
         </div>
 
->>>>>>> d245b3ea9fa6dd0fbb74bf5be991227157673993
     </div>
 </div>
 
