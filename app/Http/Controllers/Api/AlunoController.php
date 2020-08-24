@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Aluno;
+use App\Models\AlunoHistorico;
+use App\Models\AlunoRespostas;
+use App\Models\Configuracao;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
+
+
     public function listaVersao($versaoLocal)
     {
         $alunos = Aluno::where('versao', '>', $versaoLocal)->get();
@@ -17,5 +22,44 @@ class AlunoController extends Controller
     public function index() {
         $alunos = Aluno::all();
         return json_encode($alunos);
+    }
+
+    public function historico(Request $request){
+        $input = $request->all();
+        $r = $input['Items'];
+        foreach ($input['Items'] as $aluno) {
+            $historico = AlunoHistorico::where('aluno_id', $aluno['aluno_id'])->first();
+            if($historico) {
+                $historico->update($aluno);
+            } else {
+                AlunoHistorico::create($aluno);
+            }
+            
+        }
+        $config = Configuracao::where('model', 'historico')->increment('versao');
+
+        return response()->json([
+            'alunos' => $input,
+            'message' => 'sucesso'
+            ], 200);
+    }
+    public function alunosQuestoes(Request $request){
+        $input = $request->all();
+        $r = $input['Items'];
+        foreach ($input['Items'] as $item) {
+            $res = AlunoRespostas::where('aluno_id', $item['aluno_id'])->where('resposta_id', $item['resposta_id'])->first();
+            if($res) {
+                $res->update($item);
+            } else {
+                AlunoRespostas::create($item);
+            }
+            
+        }
+        $config = Configuracao::where('model', 'alunos_respostas')->increment('versao');
+
+        return response()->json([
+            'alunos' => $input,
+            'message' => 'sucesso'
+            ], 200);
     }
 }

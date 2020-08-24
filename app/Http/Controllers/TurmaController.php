@@ -19,7 +19,7 @@ class TurmaController extends Controller
         $turmas = Turma::all();
         return json_encode($turmas);
     }
-
+    
     public function minhasTurmas()
     {
         $turmas = Auth::user()->turmas()->latest()->paginate();
