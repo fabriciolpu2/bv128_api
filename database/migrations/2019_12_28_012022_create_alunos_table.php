@@ -19,8 +19,8 @@ class CreateAlunosTable extends Migration
             $table->string('matricula', 100)->nullable()->default('000000');
             $table->unsignedInteger('turma_id');
             $table->integer('idade')->unsigned()->nullable()->default(12);
-            $table->integer('pontuacao')->unsigned()->nullable()->default(12);
-            $table->integer('missoes_concluidas')->unsigned()->nullable()->default(1);
+            $table->integer('pontuacao')->unsigned()->nullable()->default(0);
+            $table->integer('missoes_concluidas')->unsigned()->nullable()->default(0);
             $table->integer('versao')->unsigned()->nullable()->default(1);
             $table->timestamps();
 

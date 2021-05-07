@@ -11,6 +11,6 @@ class Questionario extends Model
     
     public function questoes()
     {
-        return $this->hasMany(Questoes::class, 'questionarioID', 'id');
+        return $this->hasMany(Questoes::class, 'questionario_id', 'id');
     }
 }

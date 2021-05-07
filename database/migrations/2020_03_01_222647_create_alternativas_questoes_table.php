@@ -15,12 +15,12 @@ class CreateAlternativasQuestoesTable extends Migration
     {
         Schema::create('alternativas_questoes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('questaoID');
+            $table->unsignedInteger('questao_id');
             $table->boolean('correta')->nullable()->default(false);
             $table->string('descricao', 300)->nullable();
             $table->timestamps();
             $table->integer('versao')->unsigned()->nullable()->default(1);
-            $table->foreign('questaoID')->references('id')->on('questoes')->onDelete('cascade');
+            $table->foreign('questao_id')->references('id')->on('questoes')->onDelete('cascade');
         });
     }
 

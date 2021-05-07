@@ -15,16 +15,16 @@ class CreateQuestoesTable extends Migration
     {
         Schema::create('questoes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('questionarioID');
+            $table->unsignedInteger('questionario_id');
             $table->string('titulo', 300)->nullable();
             $table->string('descricao', 300)->nullable();
             $table->string('ano', 300)->nullable();
             $table->float('valor')->nullable();
-            $table->string('contextoHistorico', 300)->nullable();
+            $table->string('contexto_historico', 300)->nullable();
             $table->integer('versao')->unsigned()->nullable()->default(1);
             $table->timestamps();
 
-            $table->foreign('questionarioID')->references('id')->on('questionarios')->onDelete('cascade');
+            $table->foreign('questionario_id')->references('id')->on('questionarios')->onDelete('cascade');
         });
     }
 

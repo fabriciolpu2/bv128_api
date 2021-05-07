@@ -20,4 +20,11 @@ class Aluno extends Model
     {
         return $this->hasOne(AlunoHistorico::class, 'aluno_id', 'id');
     }
+    public function recompensas()
+    {
+        return $this->belongsToMany(Recompensas::class, 'recompensas_aluno', 'aluno_id', 'recompensa_id')
+        ->withPivot('recompensa_tipo')->withTimestamps();
+    }
+        
+    
 }
