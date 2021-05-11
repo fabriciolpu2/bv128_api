@@ -27,6 +27,18 @@ class AlunoController extends Controller
     public function alunosTurma() {
         //$professor = Auth::user()->turmas;
     }
+    public function show($id)
+    {
+        $aluno = Aluno::find($id);
+        $aluno['recompensas'] = $aluno->recompensas;
+
+        $aluno['turma'] = $aluno->turma;
+        $aluno['respostas'] = $aluno->respostas;
+        dd($aluno);
+
+        return view('portal-bv128/alunos/show', compact('aluno'));
+    }
+
     
     
 }

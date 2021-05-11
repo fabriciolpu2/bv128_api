@@ -22,13 +22,16 @@ class TurmaController extends Controller
     
     public function minhasTurmas()
     {
-        $turmas = Auth::user()->turmas()->latest()->paginate();
+        //$turmas = Auth::user()->turmas()->latest()->paginate();
+        $turmas = Turma::paginate();
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
 
     public function alunos(Turma $turma)
     {
-        $alunos =$turma->alunos()->paginate();
+        $alunos =$turma->alunos()->with('recompensas')->paginate();
+
+        //dd($alunos);
 
         return view('portal-bv128/turmas/alunos', compact('alunos', 'turma'));
     }

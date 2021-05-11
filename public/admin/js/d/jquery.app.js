@@ -230,7 +230,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\igora\Projetos\canaime\resources\admin\js\dashboard\jquery.app.js */"./resources/admin/js/dashboard/jquery.app.js");
+module.exports = __webpack_require__(/*! C:\Users\fabricio.sousa\Documents\GitHub\canaime\resources\admin\js\dashboard\jquery.app.js */"./resources/admin/js/dashboard/jquery.app.js");
 
 
 /***/ })

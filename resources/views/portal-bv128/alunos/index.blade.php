@@ -42,7 +42,9 @@
                             <th>Pontuação</th>
                             <th>Missões Concluídas</th>
                             <th>Escola</th>
+                            <th>Recompensas</th>
                             <th>Turma</th>
+                            <th>Ultimo Login</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +56,13 @@
                             <td>{{$aluno->pontuacao}}</td>
                             <td>{{$aluno->missoes_concluidas}}</td>
                             <td>{{$aluno->turma->escola->nome}}</td>
+                            <td>
+                                <a href="{{$aluno->id}}"><img src="/images/medal.svg" height="35px" alt="">
+                                    <span class="badge badge-danger" style="margin-left: -10px;">{{sizeOf($aluno->recompensas)}}</span>
+                                </a>
+                            </td>
                             <td>{{$aluno->turma->nome}}</td>
+                            <td>{{ date('d/m/Y H:i:s', strtotime( $aluno->updated_at )) }}</td>
                         </tr>
 
                         @endforeach

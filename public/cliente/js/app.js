@@ -54372,7 +54372,7 @@ jQuery(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\igora\Projetos\canaime\resources\admin\js\app.js */"./resources/admin/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\fabricio.sousa\Documents\GitHub\canaime\resources\admin\js\app.js */"./resources/admin/js/app.js");
 
 
 /***/ })

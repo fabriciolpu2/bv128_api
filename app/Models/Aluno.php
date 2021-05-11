@@ -25,6 +25,10 @@ class Aluno extends Model
         return $this->belongsToMany(Recompensas::class, 'recompensas_aluno', 'aluno_id', 'recompensa_id')
         ->withPivot('recompensa_tipo')->withTimestamps();
     }
+    public function respostas()
+    {
+        return $this->belongsToMany(AlternativasQuestoes::class, 'aluno_respostas', 'aluno_id', 'questao_id');
+    }
         
     
 }
