@@ -8,7 +8,7 @@
 /public/images
 /public/fonts
 /public/admin/
-/public/mix-manifest.json
+
 *.DS_Store
 .env.backup
 .phpunit.result.cache
