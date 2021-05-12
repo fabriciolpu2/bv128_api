@@ -10,7 +10,6 @@
 /public/admin/
 /public/mix-manifest.json
 *.DS_Store
-.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
