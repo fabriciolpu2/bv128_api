@@ -77,39 +77,39 @@
                 <!-- Navigation Menu-->
 
                 <ul class="navigation-menu">
-
-                    <li class="has-submenu {{ set_active('turmas') }}">
+                    {{-- {{ set_active('turmas') }} --}}
+                    <li class="has-submenu ">
                         <a href="{{route('minhas-turmas')}}">
                             <i class="mdi mdi-book"></i>Turmas
                         </a>
 
                     </li>
-
-                    <li class="has-submenu {{ set_active('aulas') }}">
+                    {{-- {{ set_active('aulas') }} --}}
+                    <li class="has-submenu ">
                         <a href="{{route('alunos.index')}}">
                             <i class="mdi  mdi-account-multiple"></i>Alunos
                         </a>
 
                     </li>
-
-                    <li class="has-submenu {{ set_active('questionarios') }}">
+                    {{-- {{ set_active('questionarios') }} --}}
+                    <li class="has-submenu">
                         <a href="{{route('questionarios.index')}}">
                             <i class="mdi mdi-pencil-box"></i>Questionarios
                         </a>
 
 
                     </li>
-
-                    <li class="has-submenu {{ set_active('aulas') }}">
+                    {{-- {{ set_active('aulas') }} --}}
+                    <li class="has-submenu ">
                         <a href="{{ route('aulas.index') }}">
                             <i class="mdi mdi-library"></i>Aulas
                         </a>
 
 
                     </li>
-
+                    {{-- {{ set_active('usuarios*') }} --}}
                     @if(Auth::user()->hasRole(['desenvolvedor','administrador']))
-                    <li class="pull-right has-submenu {{ set_active('usuarios*') }}">
+                    <li class="pull-right has-submenu ">
                         <a href="{{ route('usuarios.index') }}">
                             <i class="mdi mdi-account-key"></i>Usuários
                         </a>
