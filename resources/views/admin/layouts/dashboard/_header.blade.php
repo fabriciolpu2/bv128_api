@@ -114,6 +114,11 @@
                             <i class="mdi mdi-account-key"></i>Usuários
                         </a>
                     </li>
+                    <li class="pull-right has-submenu ">
+                        <a href="{{ route('eventos.index') }}">
+                            <i class="mdi mdi-account-key"></i>Eventos Historicos
+                        </a>
+                    </li>
                     @endif
 
                 </ul>

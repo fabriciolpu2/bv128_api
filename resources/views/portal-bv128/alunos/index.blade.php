@@ -42,7 +42,7 @@
                             <th>Pontuação</th>
                             <th>Missões Concluídas</th>
                             <th>Escola</th>
-                            <th>Recompensas</th>
+                            <th>Conquistas</th>
                             <th>Turma</th>
                             <th>Ultimo Login</th>
                         </tr>
