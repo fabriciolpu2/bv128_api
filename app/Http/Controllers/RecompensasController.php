@@ -14,7 +14,8 @@ class RecompensasController extends Controller
      */
     public function index()
     {
-        //
+        $recompensas = Recompensas::paginate(15);
+        return view('portal-bv128.conquistas.index', compact('recompensas'));
     }
 
     /**

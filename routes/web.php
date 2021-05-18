@@ -23,7 +23,7 @@ use App\User;
 Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
     Route::get('/',  function () {
-        return view("cliente.welcome");
+        return view("site.site");
     })->name('home.cliente');
 
     // Route::get('/projetos/bv-128', function () {
@@ -112,6 +112,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
         Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
         Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
         Route::get('portal-bv128/eventos', 'EventoHistoricoController@index')->name('eventos.index');
+        Route::get('portal-bv128/recompensas', 'RecompensasController@index')->name('recompensas.index');
         Route::get('portal-bv128/eventos/novo', 'EventoHistoricoController@create')->name('eventos.create');
         Route::post('portal-bv128/eventos/store', 'EventoHistoricoController@store')->name('eventos.store');
     });
