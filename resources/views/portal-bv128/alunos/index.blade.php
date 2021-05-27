@@ -57,7 +57,7 @@
                             <td>{{$aluno->missoes_concluidas}}</td>
                             <td>{{$aluno->turma->escola->nome}}</td>
                             <td>
-                                <a href="{{$aluno->id}}"><img src="/images/medal.svg" height="35px" alt="">
+                                <a href="{{route('alunos.show',  $aluno->id)}}"><img src="/images/medal.svg" height="35px" alt="">
                                     <span class="badge badge-danger" style="margin-left: -10px;">{{sizeOf($aluno->recompensas)}}</span>
                                 </a>
                             </td>

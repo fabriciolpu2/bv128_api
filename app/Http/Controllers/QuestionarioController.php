@@ -37,7 +37,8 @@ class QuestionarioController extends Controller
 
     public function questoesStore(Request $request, $id) {
         $inputs = $request->all();
-        $inputs['questionarioID'] = $id;
+        //dd($inputs);
+        $inputs['questionario_id'] = $id;
         // foreach ($inputs['respostas'] as $resposta) {
         //     $resposta['versao'] = 1;
         // }

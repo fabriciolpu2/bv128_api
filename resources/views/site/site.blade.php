@@ -31,6 +31,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/admin/login">Entrar</a></li>
                     </ul>
                 </div>
             </div>
