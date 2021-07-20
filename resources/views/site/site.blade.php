@@ -93,7 +93,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="site/assets/img/portfolio/01-thumbnail.jpg" alt="..." />
+                                <img class="img-fluid" src="images/bv128_aluna.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Boa Vista 128 VR</div>
@@ -107,7 +107,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="site/assets/img/portfolio/02-thumbnail.jpg" alt="..." />
+                                <img class="img-fluid" src="images/eleanor.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Eleanor III</div>
@@ -121,7 +121,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="site/assets/img/portfolio/03-thumbnail.jpg" alt="..." />
+                                <img class="img-fluid" src="images/makunaima.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Makunaima</div>
@@ -329,18 +329,18 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="site/assets/img/portfolio/01-full.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
+                                    <h2 class="text-uppercase">Boa Vista 128</h2>
+                                    <p class="item-intro text-muted">Game sobre a história da capital roraimense</p>
+                                    <img class="img-fluid d-block mx-auto" src="images/bv128_turma.jpg" alt="..." />
+                                    <p>Já imaginou voltar no tempo de forma virtual e conhecer a história de Boa Vista? Para os alunos da rede municipal isto já é realidade. Os estudantes das escolas Pequeno Polegar e Raimundo Eloy Gomes estão vivenciando as primeiras experiências com o BV 128, uma nova ferramenta tecnológica desenvolvida para ensinar de forma mais dinâmica e real a história da capital roraimense.</p>
+                                    <!-- <ul class="list-inline">
                                         <li>Date: January 2021</li>
                                         <li>Client: Threads</li>
                                         <li>Category: Illustration</li>
-                                    </ul>
+                                    </ul> -->
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
-                                        Close Project
+                                        Fechar
                                     </button>
                                 </div>
                             </div>

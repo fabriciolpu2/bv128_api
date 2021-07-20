@@ -49,12 +49,12 @@
                     </thead>
                     <tbody>
                         @foreach ($alunos as $aluno)
-
+                        
                         <tr>
                             <td>{{$aluno->matricula}}</td>
                             <td>{{$aluno->nome}}</td>
                             <td>{{$aluno->pontuacao}}</td>
-                            <td>{{$aluno->missoes_concluidas}}</td>
+                            <td>{{$aluno->historico->missoes_concluidas}}</td>
                             <td>{{$aluno->turma->escola->nome}}</td>
                             <td>
                                 <a href="{{route('alunos.show',  $aluno->id)}}"><img src="/images/medal.svg" height="35px" alt="">
@@ -62,7 +62,7 @@
                                 </a>
                             </td>
                             <td>{{$aluno->turma->nome}}</td>
-                            <td>{{ date('d/m/Y H:i:s', strtotime( $aluno->updated_at )) }}</td>
+                            <td>{{ date('d/m/Y H:i:s', strtotime( $aluno->historico->updated_at )) }}</td>
                         </tr>
 
                         @endforeach

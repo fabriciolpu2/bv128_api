@@ -34,7 +34,7 @@ class AlunoController extends Controller
 
         $aluno['turma'] = $aluno->turma;
         $aluno['respostas'] = $aluno->respostas;
-        dd($aluno);
+        //dd($aluno);
 
         return view('portal-bv128/alunos/show', compact('aluno'));
     }

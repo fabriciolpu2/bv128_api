@@ -22,7 +22,7 @@
             <a href="{{ route('eventos.create') }}" class="pull-right btn btn-purple w-md waves-effect waves-light
             mb-4">
             <i class="mdi mdi-plus-circle"></i>
-            Novo usuário
+            Novo
             </a>
             <div class="toolbar">
                 <!--        Here you can write extra buttons/actions for the toolbar              -->
