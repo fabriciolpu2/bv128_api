@@ -19,17 +19,17 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="site/assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="images/logo_canaime.png" alt="..." style="height: 50px" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> --}}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li> --}}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/admin/login">Entrar</a></li>
                     </ul>
@@ -41,7 +41,7 @@
             <div class="container">
                 <img src="../images/logo_bv128.png" alt="..." height="200px"/>
                 <div class="masthead-heading text-uppercase"></div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">PLAY</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_BLANK" href="https://play.google.com/store/apps/details?id=com.fabriciolpu2.boavista128&hl=pt_BR&gl=US">PLAY</a>
             </div>
         </header>
         <!-- Services-->
@@ -241,7 +241,7 @@
         <!-- Clients-->
         <div class="py-5">
             <div class="container">
-                <div class="row align-items-center">
+                {{-- <div class="row align-items-center">
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="site/assets/img/logos/microsoft.svg" alt="..." /></a>
                     </div>
@@ -254,15 +254,18 @@
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="site/assets/img/logos/ibm.svg" alt="..." /></a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
-        {{-- <!-- Contact-->
-        <section class="page-section" id="contact">
+        <!-- Contact-->
+        {{-- <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Contato</h2>
+                    <h3 class="section-subheading text">canaimestudio@gmail.com</h3>
+                    <h3 class="section-subheading text">
+                        
+                    </h3>
                 </div>
                 <form id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div class="row align-items-stretch mb-5">
@@ -299,7 +302,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-left">
-                        Copyright &copy; Your Website
+                        Copyright &copy; Canaimé Studio
                         <!-- This script automatically adds the current year to your website footer-->
                         <!-- (credit: https://updateyourfooter.com/)-->
                         <script>
@@ -311,10 +314,10 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <div class="col-lg-4 text-lg-right">
+                    {{-- <div class="col-lg-4 text-lg-right">
                         <a class="mr-3" href="#!">Privacy Policy</a>
                         <a href="#!">Terms of Use</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </footer>
@@ -350,7 +353,7 @@
             </div>
         </div>
         <!-- Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        {{-- <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal"><img src="site/assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -378,9 +381,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        {{-- <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal"><img src="site/assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -408,7 +411,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
