@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,5 +29,23 @@ Route::get('/alternativas/{versaoLocal}', 'Api\AlternativasQuestoesController@li
 
 
 Route::get('/versao/{model}', 'Api\ConfiguracaoController@show')->name('versao-model');
-Route::post('/historico/', 'Api\AlunoController@historico');
+Route::post('/historico', 'Api\AlunoController@historico');
 Route::post('/aluno_respostas', 'Api\AlunoController@alunosQuestoes');
+Route::post('/recompensas_aluno', 'Api\AlunoController@recompensasAluno');
+//post 
+
+Route::get('make-history', function() {
+    //$alunos = DB::table('alunos')->get();
+    //foreach ($alunos as $aluno) {
+    for($i = 1100; $i < 1141; $i++){
+        //dd();
+        DB::table('aluno_historicos')->insert([
+            'id'=> $i, 
+            'aluno_id'=> $i, 
+            'missoes_concluidas'=> 0, 
+            'versao'=> 0, 
+            'created_at' =>  Carbon::now(),
+            'updated_at' =>  Carbon::now(),
+        ]);
+    }
+});

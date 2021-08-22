@@ -17,6 +17,7 @@
         <div class="card-box">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach ($aluno->recompensas as $recompensa)
+                
                     <div class="col">
                         <div class="card">
                             <img src="/{{$recompensa->imagem}}" class="card-img-top" alt="...">

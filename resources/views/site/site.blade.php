@@ -37,9 +37,9 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead" style="background-image: url('images/backgroound.jpg')">
-            <div class="container">
-                <img src="../images/logo_bv128.png" alt="..." height="200px"/>
+        <header class="masthead" style="background-image: url('images/bv128_back.png')">
+            <div class="container" style="margin-left:1040px">
+                <img src="../images/logo_bv128_m2.png" alt="..." height="300px" style="margin-top:-100px; "/>
                 <div class="masthead-heading text-uppercase"></div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_BLANK" href="https://play.google.com/store/apps/details?id=com.fabriciolpu2.boavista128&hl=pt_BR&gl=US">PLAY</a>
             </div>
@@ -84,7 +84,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">

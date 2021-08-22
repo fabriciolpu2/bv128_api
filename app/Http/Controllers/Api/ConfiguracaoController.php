@@ -49,7 +49,7 @@ class ConfiguracaoController extends Controller
     {
         $configuracao = Configuracao::where('model', $model)->first();
 
-        if ($model == 'historico' || $model == 'alunos_respostas') {
+        if ($model == 'historico' || $model == 'alunos_respostas' || $model == 'recompensas') {
             $updateS = $configuracao['updated_at'];
             $configuracao['ultima_atualizacao'] = $updateS->getTimestamp();
         }

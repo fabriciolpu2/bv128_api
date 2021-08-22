@@ -53,8 +53,8 @@
                         <tr>
                             <td>{{$aluno->matricula}}</td>
                             <td>{{$aluno->nome}}</td>
-                            <td>{{$aluno->pontuacao}}</td>
-                            <td>{{$aluno->historico->missoes_concluidas}}</td>
+                           <td>{{$aluno->pontuacao}}</td>
+                           <td>{{$aluno->historico->missoes_concluidas}}</td>
                             <td>{{$aluno->turma->escola->nome}}</td>
                             <td>
                                 <a href="{{route('alunos.show',  $aluno->id)}}"><img src="/images/medal.svg" height="35px" alt="">
