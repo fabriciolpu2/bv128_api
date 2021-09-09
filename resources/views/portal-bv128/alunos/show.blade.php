@@ -16,13 +16,16 @@
     <div class="col-lg-12">
         <div class="card-box">
             <div class="row row-cols-1 row-cols-md-3 g-4">
+                
                 @foreach ($aluno->recompensas as $recompensa)
                 
-                    <div class="col">
-                        <div class="card">
-                            <img src="/{{$recompensa->imagem}}" class="card-img-top" alt="...">
+                    <div class="col" style="">
+                        <div class="card" style="">
+                            <img src="/{{$recompensa->eventoHistorico->imagem}}" class="card-img-top" 
+                                style="width: 300px; height: 337px; object-fit: cover; padding: 10px;">
                             <div class="card-body">
                                 <h5 class="card-title">{{Str::upper($recompensa->descricao)}}</h5>
+                                
                                 <p class="card-text">{{$recompensa->eventoHistorico->descricao}}</p>
                             </div>
                             <div class="card-footer">
@@ -31,6 +34,7 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                 @endforeach
             </div>
         </div>

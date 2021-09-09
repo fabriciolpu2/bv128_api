@@ -49,3 +49,8 @@ Route::get('make-history', function() {
         ]);
     }
 });
+
+
+Route::get('v1/aluno/{matricula}', 'Api\AlunoController@show');
+Route::get('v1/recompensa/{id}', 'Api\AlunoController@recompensa');
+

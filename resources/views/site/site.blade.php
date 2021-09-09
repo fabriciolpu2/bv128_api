@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Canaimé Studio</title>
+        <title>Canaimé_Studio</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
                     <ul class="navbar-nav text-uppercase ml-auto">
                         {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li> --}}
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
                         {{-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li> --}}
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li> -->
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/admin/login">Entrar</a></li>
                     </ul>
                 </div>
