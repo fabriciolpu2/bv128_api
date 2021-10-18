@@ -26,7 +26,7 @@ Route::get('/questoes', 'Api\QuestoesController@index')->name('lista-questoes');
 Route::get('/questoes/{versaoLocal}', 'Api\QuestoesController@listaVersao')->name('lista-questoes-versao');
 Route::get('/alternativas', 'Api\AlternativasQuestoesController@index')->name('lista-alternativas');
 Route::get('/alternativas/{versaoLocal}', 'Api\AlternativasQuestoesController@listaVersao')->name('lista-alternativas-versao');
-
+Route::get('/recompensas/{versaoLocal}', 'Api\AlunoController@listaVersao')->name('lista-recompensas-versao');
 
 Route::get('/versao/{model}', 'Api\ConfiguracaoController@show')->name('versao-model');
 Route::post('/historico', 'Api\AlunoController@historico');

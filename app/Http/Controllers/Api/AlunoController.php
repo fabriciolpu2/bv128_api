@@ -23,6 +23,13 @@ class AlunoController extends Controller
         return json_encode($alunos);
     }
 
+    public function recompensas($versaoLocal) {
+        //dd("$recompensas");
+        $recompensas = Recompensas::all();
+        
+        return json_encode($recompensas);
+    }
+
     public function index() {
         $alunos = Aluno::all();
         return json_encode($alunos);

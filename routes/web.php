@@ -139,7 +139,11 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-
+Route::get('adesivos', function() {
+    $adesivos = DB::table('alunos')->whereNotNull('login')->get();
+    //dd($adesivos);
+    return view('site.adesivos', compact('adesivos', $adesivos));
+});
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
