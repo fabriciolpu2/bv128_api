@@ -25,6 +25,9 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
     Route::get('/',  function () {
         return view("site.site");
     })->name('home.cliente');
+    Route::get('/financeiro',  function () {
+        return view("financeiro");
+    })->name('financeiro');
 
     // Route::get('/projetos/bv-128', function () {
     //     return view("cliente.projetos.index");
@@ -144,6 +147,19 @@ Route::get('adesivos', function() {
     //dd($adesivos);
     return view('site.adesivos', compact('adesivos', $adesivos));
 });
+
+Route::get('sobre', function() {
+    return view('site.sobre');
+})->name('sobre');
+Route::get('bv128', function() {
+    return view('site.bv128');
+})->name('bv128');
+Route::get('makunaima', function() {
+    return view('site.makunaima');
+})->name('makunaima');
+Route::get('eleanor', function() {
+    return view('site.eleanor');
+})->name('eleanor');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

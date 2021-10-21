@@ -12,22 +12,17 @@
 			
 		<div id="wrapper">
 		
-			<div id="bg" 
-				style="background:url('site/assets/img/bv.png') 
-					bottom left; ">
-					
-
-				</div>
-			<!-- <div id="overlay"></div>-->
+			
 			<div id="main">
-                <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: #212529 !important">
                     <div class="container">
                         <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"><img  class="js-scroll-trigger" src="images/logo_canaime.png" alt="..." style="height: 50px" /></a> -->
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-bars ml-1"></i>
                         </button>
-						<div class="collapse navbar-collapse navbar-toggler-right">
-							<ul class="navbar-nav text-uppercase ml-auto" style="text-align: right;">    
+						<div class="navbar navbar-toggler-right">
+							<ul class="navbar-nav text-uppercase ml-auto" style="text-align: right;">
+								<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('home.cliente')}}">Home</a></li>
 								<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('bv128')}}">BV 128</a></li>
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('eleanor')}}">EleanorIII</a></li>
 								<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Makunaima</a></li>
@@ -37,39 +32,16 @@
 						</div>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
 							<ul class="navbar-nav text-uppercase ml-auto" style="text-align: right;">
-                               
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/admin/login">Entrar</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-
-				<!-- Header -->
-					<header id="header" style="">
-                        
-						<!-- <h1>Adam Jensen</h1>  -->
-						<img src="images/logo_canaime.png" alt="" width="350px">
-						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p> -->
-						<nav>
-							<ul>
-								<li><a href="https://instagram.com/canaimestudio" class="icon brands fa-instagram" style="color: aliceblue; text-decoration: none"><span class="label">Instagram</span></a></li>
-								<li><a href="https://api.whatsapp.com/send?phone=5595991370723" class="icon brands fa-whatsapp" style="color: aliceblue; text-decoration: none"><span class="label">Email</span></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCRjvxLoWN9kZhdVPh-IH8sA" style="color: aliceblue; text-decoration: none;" class="icon brands fa-youtube" target="_blank"><span class="label">Jogar</span></a></li>
-                                <li><a href="https://play.google.com/store/apps/details?id=com.fabriciolpu2.boavista128" style="color: aliceblue; text-decoration: none;" class="icon brands fa-google-play" target="_blank"><span class="label">Jogar</span></a></li>
-
-							</ul>
-						</nav>
-						
-					</header>					
-				<!-- Footer -->
 					<footer id="footer">
 						<span class="copyright" style="color: aliceblue;" >&copy; Canaimé Studios  </span>
 					</footer>
-					
-
 			</div>
-			
-
+            @yield('paginas')
 		</div>
 		<script>
 			window.onload = function() { document.body.classList.remove('is-preload'); }
