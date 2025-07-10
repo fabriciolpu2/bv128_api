@@ -126,14 +126,11 @@ class UserController extends Controller
     public function destroy($usuario)
     {
         try {
-
             $usuario = User::findOrFail($usuario);
         } catch (\Throwable $th) {
             throw $th;
         }
-
         $usuario->delete();
-
         return back()->with('success', 'Deleted Record successfully.');
     }
 
