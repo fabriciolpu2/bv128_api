@@ -32,23 +32,9 @@ Route::get('/versao/{model}', 'Api\ConfiguracaoController@show')->name('versao-m
 Route::post('/historico', 'Api\AlunoController@historico');
 Route::post('/aluno_respostas', 'Api\AlunoController@alunosQuestoes');
 Route::post('/recompensas_aluno', 'Api\AlunoController@recompensasAluno');
-//post 
+//post
 
-Route::get('make-history', function() {
-    //$alunos = DB::table('alunos')->get();
-    //foreach ($alunos as $aluno) {
-    for($i = 1100; $i < 1141; $i++){
-        //dd();
-        DB::table('aluno_historicos')->insert([
-            'id'=> $i, 
-            'aluno_id'=> $i, 
-            'missoes_concluidas'=> 0, 
-            'versao'=> 0, 
-            'created_at' =>  Carbon::now(),
-            'updated_at' =>  Carbon::now(),
-        ]);
-    }
-});
+Route::get('make-history', 'Api\HistoryController');
 
 
 Route::get('v1/aluno/{matricula}', 'Api\AlunoController@show');
