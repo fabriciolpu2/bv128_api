@@ -10,29 +10,31 @@ class TurmaController extends Controller
 {
     public function listaVersao($versaoLocal)
     {
-        $turmas = Turma::where('versao', '>', $versaoLocal)->get();
-        return json_encode($turmas);
+        $turmas = $this->cache('turmas-versao-local', function () use ($versaoLocal) {
+            return Turma::where('versao', '>', $versaoLocal)->get();
+        });
+        return response()->json($turmas);
     }
 
     public function index()
     {
-        $turmas = Turma::all();
-        return json_encode($turmas);
+        $turmas = $this->cache('todas-as-turmas', function () {
+            return Turma::all();
+        });
+        return response()->json($turmas);
     }
-    
+
     public function minhasTurmas()
     {
-        //$turmas = Auth::user()->turmas()->latest()->paginate();
-        $turmas = Turma::paginate();
+        $turmas = $this->cache('minhas-turmas', function () {
+            return Turma::paginate();
+        });
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
 
     public function alunos(Turma $turma)
     {
-        $alunos =$turma->alunos()->with('recompensas')->paginate();
-
-        //dd($alunos);
-
+        $alunos = $turma->alunos()->with('recompensas')->paginate();
         return view('portal-bv128/turmas/alunos', compact('alunos', 'turma'));
     }
 }
