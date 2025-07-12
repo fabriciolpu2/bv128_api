@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Aula;
+use App\Models\Aula;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -146,7 +146,7 @@ class AulaController extends Controller
 
 
     /**
-     * Retorna os projetos em forma de blog para a página /projetos/bv-128 
+     * Retorna os projetos em forma de blog para a página /projetos/bv-128
      */
     public function projetosBv128()
     {
