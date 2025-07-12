@@ -8,17 +8,22 @@ use Illuminate\Http\Request;
 
 class EscolaController extends Controller
 {
-    
+
     public function listaVersao($versaoLocal)
     {
-        $escolas = Escola::where('versao', '>', $versaoLocal)->get();
-        return json_encode($escolas);
+        $escolas = $this->cache('escolas-por-versao', function () use ($versaoLocal) {
+            return Escola::where('versao', '>', $versaoLocal)->get();
+        }, 26 * 60 * 7);
+        return response()->json($escolas);
     }
 
-    public function index() {
-        $escolas = Escola::all();
-        return json_encode($escolas);
+    public function index()
+    {
+        $escolas = $this->cache('todas-as-escolas', function () {
+            return Escola::all();
+        });
+        return response()->json($escolas);
     }
 
-    
+
 }
