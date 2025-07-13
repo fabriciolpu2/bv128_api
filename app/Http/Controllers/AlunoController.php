@@ -17,16 +17,19 @@ class AlunoController extends Controller
         return json_encode($alunos);
     }
 
-    public function index() {
-        //$professor = Auth::user()->turmas;
-        //dd($professor[0]->alunos);
-        $alunos = Aluno::paginate(15);
-        //dd($alunos);
+    public function index()
+    {
+        $alunos = $this->cache('alunos', function () {
+            return Aluno::paginate(15);
+        });
         return view('portal-bv128/alunos/index', compact('alunos'));
     }
-    public function alunosTurma() {
+
+    public function alunosTurma()
+    {
         //$professor = Auth::user()->turmas;
     }
+
     public function show($id)
     {
         $aluno = Aluno::find($id);
@@ -39,6 +42,5 @@ class AlunoController extends Controller
         return view('portal-bv128/alunos/show', compact('aluno'));
     }
 
-    
-    
+
 }
