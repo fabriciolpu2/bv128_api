@@ -24,9 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        if (!$this->osProcessIsRunning('queue:work')) {
-            $schedule->command('queue:work')->everyMinute();
-        }
+//        if (!$this->osProcessIsRunning('queue:work')) {
+//            $schedule->command('queue:work')->everyMinute();
+//        }
     }
 
     /**
