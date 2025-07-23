@@ -16,18 +16,13 @@ use App\User;
 //Auth::routes();
 
 
-
 // Registration Routes...
 // Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('admin/register', 'Auth\RegisterController@register');
 Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
 
-    Route::get('/',  function () {
-        return view("site.site");
-    })->name('home.cliente');
-    Route::get('/financeiro',  function () {
-        return view("financeiro");
-    })->name('financeiro');
+    Route::get('/', 'WebController@site')->name('home.cliente');
+    Route::get('/financeiro', 'WebController@financeiro')->name('financeiro');
 
     // Route::get('/projetos/bv-128', function () {
     //     return view("cliente.projetos.index");
@@ -37,9 +32,7 @@ Route::group(['prefix' => '', 'middleware' => 'setTheme:cliente'], function () {
     Route::get('/projetos/bv-128', 'AulaController@projetosBv128')->middleware(['auth', 'role:professor|aluno'])->name('projeto.bv-128');
     Route::get('/projetos/bv-128/{aula}', 'AulaController@projetoBv128')->middleware(['auth', 'role:professor|aluno'])->name('publico.aula.show');
 
-    Route::get('/projetos/bv-128/aulas', function () {
-        return view("cliente.aulas.index");
-    })->name('projeto.aulas');
+    Route::get('/projetos/bv-128/aulas', 'WebController@aulas')->name('projeto.aulas');
 });
 
 
@@ -134,32 +127,18 @@ Route::get('/contato', 'HomeController@contact')->name('contato');
 Route::post('/contato', 'HomeController@sendMessage')->name('contato.form');
 
 
-
-
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('adesivos', function() {
-    $adesivos = DB::table('alunos')->whereNotNull('login')->get();
-    //dd($adesivos);
-    return view('site.adesivos', compact('adesivos', $adesivos));
-});
+Route::get('adesivos', 'WebController@adesivos')->name('adesivos');
 
-Route::get('sobre', function() {
-    return view('site.sobre');
-})->name('sobre');
-Route::get('bv128', function() {
-    return view('site.bv128');
-})->name('bv128');
-Route::get('makunaima', function() {
-    return view('site.makunaima');
-})->name('makunaima');
-Route::get('eleanor', function() {
-    return view('site.eleanor');
-})->name('eleanor');
+Route::get('sobre', 'WebController@sobre')->name('sobre');
+Route::get('bv128', 'WebController@bv128')->name('bv128');
+Route::get('makunaima', 'WebController@makunaima')->name('makunaima');
+Route::get('eleanor', 'WebController@eleanor')->name('eleanor');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
