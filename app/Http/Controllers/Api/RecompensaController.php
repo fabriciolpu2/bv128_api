@@ -19,7 +19,8 @@ class RecompensaController extends Controller
                     'id' => $recompensa->id,
                     'tipo' => $recompensa->tipo,
                     'descricao' => $recompensa->descricao,
-                    'imagem' => $recompensa->imagem
+                    'imagem' => $recompensa->imagem,
+                    'valor' => $recompensa->valor,
                 ];
             });
         });
