@@ -20,7 +20,7 @@ class RecompensaController extends Controller
                     'tipo' => $recompensa->tipo,
                     'descricao' => $recompensa->descricao,
                     'imagem' => $recompensa->imagem,
-                    'valor' => $recompensa->valor,
+                    'valor' => intval($recompensa->valor),
                 ];
             });
         });
