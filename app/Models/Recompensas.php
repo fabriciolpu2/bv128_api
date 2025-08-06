@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Recompensas extends Model
 {
@@ -15,11 +16,22 @@ class Recompensas extends Model
     {
         return $this->belongsTo(EventoHistorico::class, 'id', 'recompensa_id');
     }
-    public function alunoss() {
+
+    public function alunoss()
+    {
         return $this->hasMany('recompensas_aluno');
     }
+
     public function alunos()
     {
-        return $this->belongsToMany(Aluno::class, 'recompensas_aluno', 'recompensa_id','aluno_id');
+        return $this->belongsToMany(Aluno::class, 'recompensas_aluno', 'recompensa_id', 'aluno_id');
+    }
+
+    public function getImagemAttribute()
+    {
+        if (!empty($this->attributes['imagem'])) {
+            return url(Storage::url($this->attributes['imagem']));
+        }
+        return null;
     }
 }
