@@ -10,7 +10,7 @@ class RecompensaController extends Controller
 {
     use CacheTrait;
 
-    public function index()
+    public function index($versao)
     {
         return $this->cache('todas-as-recompensas', function () {
             $recompensas = Recompensas::all();
