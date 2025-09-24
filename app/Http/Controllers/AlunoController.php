@@ -19,9 +19,7 @@ class AlunoController extends Controller
 
     public function index()
     {
-        $alunos = $this->cache('alunos', function () {
-            return Aluno::paginate(15);
-        });
+        $alunos = Aluno::paginate(15);
         return view('portal-bv128/alunos/index', compact('alunos'));
     }
 

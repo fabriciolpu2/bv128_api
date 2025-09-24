@@ -10,7 +10,7 @@ class TurmaController extends Controller
 {
     public function listaVersao($versaoLocal)
     {
-        $turmas = $this->cache('turmas-versao-local', function () use ($versaoLocal) {
+        $turmas = $this->cache("turmas-versao-local-$versaoLocal", function () use ($versaoLocal) {
             return Turma::where('versao', '>', $versaoLocal)->get();
         });
         return response()->json($turmas);
@@ -26,9 +26,7 @@ class TurmaController extends Controller
 
     public function minhasTurmas()
     {
-        $turmas = $this->cache('minhas-turmas', function () {
-            return Turma::paginate();
-        });
+        $turmas = Turma::paginate();
         return view('portal-bv128/turmas/minhas-turmas', compact('turmas'));
     }
 

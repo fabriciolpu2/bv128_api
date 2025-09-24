@@ -12,7 +12,7 @@ class RecompensaController extends Controller
 
     public function index($versao)
     {
-        return $this->cache('todas-as-recompensas', function () {
+        return $this->cache("todas-as-recompensas-$versao", function () {
             $recompensas = Recompensas::all();
             return $recompensas->map(function ($recompensa) {
                 return [
