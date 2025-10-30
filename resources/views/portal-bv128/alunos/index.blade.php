@@ -8,24 +8,24 @@
         <h6 class="category">Aqui está a lista de todos os alunos cadastrados</h6>
         <br>
 
+
     </div>
 </div>
 
 
 <div class="row text-center m-t-50">
     <div class="col-lg-12">
+        @if(session('error'))
+            <div class="alert alert-warning" role="alert">
+                {{session('error')}}
+            </div>
+        @endif
         <div class="card-box">
             <h4 class="header-title mb-4">
                 Alunos
                 ({{ $alunos->total()}})
             </h4>
-            {{-- <a href="{{ route('usuarios.create') }}" class="pull-right btn btn-purple w-md waves-effect waves-light
-            mb-4">
-            <i class="mdi mdi-plus-circle"></i>
-            Novo usuário
-            </a> --}}
             <div class="toolbar">
-                <!--        Here you can write extra buttons/actions for the toolbar              -->
                 <div class="text-left ml-50 mb-20">
                     <h5>Exibindo {{ $alunos->firstItem() }} até {{ $alunos->lastItem()}} de {{ $alunos->total() }}
                         alunos</h5>
@@ -43,13 +43,14 @@
                             <th>Missões Concluídas</th>
                             <th>Escola</th>
                             <th>Conquistas</th>
+                            <th>Questionários</th>
                             <th>Turma</th>
                             <th>Ultimo Login</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($alunos as $aluno)
-                        
+
                         <tr>
                             <td>{{$aluno->matricula}}</td>
                             <td>{{$aluno->nome}}</td>
@@ -59,6 +60,13 @@
                             <td>
                                 <a href="{{route('alunos.show',  $aluno->id)}}"><img src="/images/medal.svg" height="35px" alt="">
                                     <span class="badge badge-danger" style="margin-left: -10px;">{{sizeOf($aluno->recompensas)}}</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('alunos.questionarios', $aluno->id) }}" title="Ver questionários do aluno">
+                                    <span class="badge badge-danger" style="margin-left: -10px;">
+                                        <i class="fa fa-file-alt"></i>
+                                    </span>
                                 </a>
                             </td>
                             <td>{{$aluno->turma->nome}}</td>

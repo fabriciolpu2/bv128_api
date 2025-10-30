@@ -30,7 +30,7 @@ class Recompensas extends Model
     public function getImagemAttribute()
     {
         if (!empty($this->attributes['imagem'])) {
-            return url(Storage::url($this->attributes['imagem']));
+            return Storage::disk('bv128')->url($this->attributes['imagem']);
         }
         return null;
     }

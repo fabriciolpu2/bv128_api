@@ -66,7 +66,7 @@ return [
         'bv128' => [
             'driver' => 'local',
             'root' => storage_path('app/public/evento_historico/'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL').'/storage/evento_historico',
             'visibility' => 'public',
         ],
 

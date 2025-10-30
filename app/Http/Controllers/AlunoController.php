@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AlunoQuestionarioView;
+use App\AlunoRespostaView;
 use App\Models\Aluno;
 use App\Models\AlunoHistorico;
 use App\Models\AlunoRespostas;
@@ -40,5 +42,28 @@ class AlunoController extends Controller
         return view('portal-bv128/alunos/show', compact('aluno'));
     }
 
+    public function listaQuestionarios($id)
+    {
+        try {
 
+            $questionarios = AlunoQuestionarioView::where('aluno_id', (int)$id)->first();
+            if(!$questionarios){
+                return back()->with('error', 'Aluno não possui questionários');
+            }
+            return view('portal-bv128/alunos/questionarios', compact('questionarios'));
+        } catch (\Exception $exception) {
+            return back();
+        }
+    }
+
+    public function questionarios($id, $questionario_id)
+    {
+        try {
+            $questionario = AlunoRespostaView::where('questionario_id', (int)$questionario_id)->first();
+
+            return view('portal-bv128/alunos/respostas', compact('questionario'));
+        } catch (\Exception $exception) {
+            return back();
+        }
+    }
 }

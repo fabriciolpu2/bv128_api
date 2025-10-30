@@ -101,6 +101,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
          */
         Route::get('portal-bv128/alunos', 'AlunoController@index')->name('alunos.index');
         Route::get('portal-bv128/alunos/{id}', 'AlunoController@show')->name('alunos.show');
+        Route::get('portal-bv128/alunos/{id}/questionarios', 'AlunoController@listaQuestionarios')->name('alunos.questionarios');
+        Route::get('portal-bv128/alunos/{id}/questionarios/{questionario_id}/respostas', 'AlunoController@questionarios')->name('alunos.questionarios.respostas');
         Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
         Route::get('portal-bv128/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
         Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
