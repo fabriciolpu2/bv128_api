@@ -59,7 +59,13 @@ class AlunoController extends Controller
     public function questionarios($id, $questionario_id)
     {
         try {
-            $questionario = AlunoRespostaView::where('questionario_id', (int)$questionario_id)->first();
+            $questionario = AlunoRespostaView::where('questionario_id', (int)$questionario_id)
+                ->where('id', (int)$id)
+                ->first();
+
+            if(!$questionario){
+                return back();
+            }
 
             return view('portal-bv128/alunos/respostas', compact('questionario'));
         } catch (\Exception $exception) {
