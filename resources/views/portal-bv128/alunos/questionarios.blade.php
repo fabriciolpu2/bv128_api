@@ -26,11 +26,9 @@
                         </thead>
                         <tbody>
                         @foreach ($questionarios->questionarios as $questionario)
-
-
                             <tr>
                                 <td>
-                                    <a href="{{route('alunos.questionarios.respostas',  ['id' => 1,'questionario_id' => $questionario['questionario_id']])}}">{{ucfirst($questionario['fase'])}}</a>
+                                    <a href="{{route('alunos.questionarios.respostas',  ['id' => $questionarios['aluno_id'],'questionario_id' => $questionario['questionario_id']])}}">{{ucfirst($questionario['fase'])}}</a>
                                 </td>
                                 <td>{{$questionario['acertos']}}</td>
                             </tr>
