@@ -95,6 +95,12 @@ return [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
         ],
+        'discord' => [
+            'driver' => 'custom',
+            'via' => \App\Logging\DiscordLogger::class,
+            'level' => 'debug',
+            'host' => env('DISCORD_LOG_WEBHOOK_URL')
+        ]
     ],
 
 ];

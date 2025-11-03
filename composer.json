@@ -60,7 +60,8 @@
             "Tests\\": "tests/"
         },
         "files": [
-            "app/Helpers/html.php"
+            "app/Helpers/html.php",
+            "app/Helpers/data.php"
         ]
     },
     "minimum-stability": "dev",
