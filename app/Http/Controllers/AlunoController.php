@@ -21,7 +21,7 @@ class AlunoController extends Controller
 
     public function index()
     {
-        $alunos = Aluno::paginate(15);
+        $alunos = Aluno::with('questionarios')->paginate(15);
         return view('portal-bv128/alunos/index', compact('alunos'));
     }
 

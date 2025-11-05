@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\AlunoQuestionarioView;
 use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model
@@ -9,7 +10,7 @@ class Aluno extends Model
     //
     protected $table = 'alunos';
     protected $fillable = ['nome', 'matricula', 'turma_id', 'idade', 'pontuacao', 'missoes_concluidas'];
-    
+
     //public $with = ['turma'];
     public function turma()
     {
@@ -29,6 +30,11 @@ class Aluno extends Model
     {
         return $this->belongsToMany(AlternativasQuestoes::class, 'aluno_respostas', 'aluno_id', 'questao_id');
     }
-        
-    
+
+    public function questionarios()
+    {
+        return $this->hasOne(AlunoQuestionarioView::class, 'aluno_id', 'id');
+    }
+
+
 }

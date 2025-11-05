@@ -12,8 +12,13 @@
     </div>
 </div>
 
-<div style="margin-top: 30px">
+<div class="row text-center m-t-50">
     <div class="col-lg-12">
+        @if(session('error'))
+            <div class="alert alert-warning" role="alert">
+                {{session('error')}}
+            </div>
+        @endif
         <div class="card-box">
 
             <div class="row align-items-center">
@@ -43,6 +48,7 @@
                             <th>Missões Concluídas</th>
                             <th>Escola</th>
                             <th>Recompensas</th>
+                            <th>Questionários</th>
                             <th>Turma</th>
                         </tr>
                     </thead>
@@ -60,8 +66,16 @@
                                     <span class="badge badge-danger" style="margin-left: -10px;">{{sizeOf($aluno->recompensas)}}</span>
                                 </a>
                             </td>
-                                
-                                
+                            <td>
+                                <a href="{{ route('alunos.questionarios', $aluno->id) }}" title="Ver questionários do aluno">
+                                    <span class="badge badge-info" style="margin-left: -10px;">
+                                        <i class="mdi mdi-chart-bar mdi-18px">{{$aluno->questionarios ? count($aluno->questionarios['questionarios']) : 0}}</i>
+                                    </span>
+
+                                </a>
+                            </td>
+
+
                             <td>{{$aluno->turma->nome}}</td>
                         </tr>
 

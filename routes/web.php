@@ -99,20 +99,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
         /**
          * Controle do portal, acesso do professor
          */
-        Route::get('portal-bv128/alunos', 'AlunoController@index')->name('alunos.index');
-        Route::get('portal-bv128/alunos/{id}', 'AlunoController@show')->name('alunos.show');
-        Route::get('portal-bv128/alunos/{id}/questionarios', 'AlunoController@listaQuestionarios')->name('alunos.questionarios');
-        Route::get('portal-bv128/alunos/{id}/questionarios/{questionario_id}/respostas', 'AlunoController@questionarios')->name('alunos.questionarios.respostas');
-        Route::get('portal-bv128/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
-        Route::get('portal-bv128/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
-        Route::get('portal-bv128/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
-        Route::get('portal-bv128/questionario/{questionario}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
-        Route::get('portal-bv128/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
-        Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
-        Route::get('portal-bv128/eventos', 'EventoHistoricoController@index')->name('eventos.index');
-        Route::get('portal-bv128/recompensas', 'RecompensasController@index')->name('recompensas.index');
-        Route::get('portal-bv128/eventos/novo', 'EventoHistoricoController@create')->name('eventos.create');
-        Route::post('portal-bv128/eventos/store', 'EventoHistoricoController@store')->name('eventos.store');
+        Route::prefix('portal-bv128')->group(function () {
+            Route::get('/alunos', 'AlunoController@index')->name('alunos.index');
+            Route::get('/alunos/{id}', 'AlunoController@show')->name('alunos.show');
+            Route::get('/alunos/{id}/questionarios', 'AlunoController@listaQuestionarios')->name('alunos.questionarios');
+            Route::get('/alunos/{id}/questionarios/{questionario_id}/respostas', 'AlunoController@questionarios')->name('alunos.questionarios.respostas');
+            Route::get('/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
+            Route::get('/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
+            Route::get('/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');
+            Route::get('/questionario/{questionario}/questoes', 'QuestionarioController@questoes')->name('questoes.lista');
+            Route::get('/questionario/{id}/questoes/novo', 'QuestionarioController@questoesCreate')->name('questoes.nova');
+            Route::post('portal-bv128/questionario/{id}/questoes/store', 'QuestionarioController@questoesStore')->name('questoes.store');
+            Route::get('/eventos', 'EventoHistoricoController@index')->name('eventos.index');
+            Route::get('/recompensas', 'RecompensasController@index')->name('recompensas.index');
+            Route::get('/eventos/novo', 'EventoHistoricoController@create')->name('eventos.create');
+            Route::post('/eventos/store', 'EventoHistoricoController@store')->name('eventos.store');
+            Route::get('/escolas', 'EscolaController@listaEscolas')->name('escolas.index');
+            Route::get('/escolas/{escola}', 'EscolaController@show')->name('escolas.show');
+        });
     });
 
 

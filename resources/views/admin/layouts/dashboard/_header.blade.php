@@ -107,6 +107,13 @@
 
 
                     </li>
+                    <li class="has-submenu ">
+                        <a href="{{ route('escolas.index') }}">
+                            <i class="mdi mdi-school"></i>Escolas
+                        </a>
+
+
+                    </li>
                     {{-- {{ set_active('usuarios*') }} --}}
                     @if(Auth::user()->hasRole(['desenvolvedor','administrador']))
                     <li class="pull-right has-submenu ">

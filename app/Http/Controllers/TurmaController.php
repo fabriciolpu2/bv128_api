@@ -32,7 +32,7 @@ class TurmaController extends Controller
 
     public function alunos(Turma $turma)
     {
-        $alunos = $turma->alunos()->with('recompensas')->paginate();
+        $alunos = $turma->alunos()->with(['recompensas', 'questionarios'])->paginate();
         return view('portal-bv128/turmas/alunos', compact('alunos', 'turma'));
     }
 }

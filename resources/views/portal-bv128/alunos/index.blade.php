@@ -64,8 +64,8 @@
                             </td>
                             <td>
                                 <a href="{{ route('alunos.questionarios', $aluno->id) }}" title="Ver questionários do aluno">
-                                    <span class="badge badge-danger" style="margin-left: -10px;">
-                                        <i class="fa fa-file-alt"></i>
+                                    <span class="badge badge-info" style="margin-left: -10px;">
+                                        <i class="mdi mdi-chart-bar mdi-18px">{{$aluno->questionarios ? count($aluno->questionarios['questionarios']) : 0}}</i>
                                     </span>
                                 </a>
                             </td>
