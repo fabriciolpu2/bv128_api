@@ -15,7 +15,7 @@
 
     <div class="row text-center m-t-50">
         @if(count($aluno->recompensas) > 0)
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="card-box">
                     <h4 class="header-title mb-4">
                         Recompensas coletadas
@@ -53,7 +53,7 @@
             </div>
         @endif
         @if(count($aluno->questionarios) > 0)
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="card-box">
                     <h4 class="header-title mb-4">
                         Questionários
