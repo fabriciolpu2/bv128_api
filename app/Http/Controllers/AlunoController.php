@@ -8,6 +8,7 @@ use App\Models\Aluno;
 use App\Models\AlunoHistorico;
 use App\Models\AlunoRespostas;
 use App\Models\Configuracao;
+use App\Models\Views\VwDetalheAluno;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -32,11 +33,16 @@ class AlunoController extends Controller
 
     public function show($id)
     {
-        $aluno = Aluno::find($id);
-        $aluno['recompensas'] = $aluno->recompensas;
-
-        $aluno['turma'] = $aluno->turma;
-        $aluno['respostas'] = $aluno->respostas;
+//        $aluno = Aluno::find($id);
+//        $aluno['recompensas'] = $aluno->recompensas;
+//
+//        $aluno['turma'] = $aluno->turma;
+//        $aluno['respostas'] = $aluno->respostas;
+        //dd($aluno);
+        $aluno = VwDetalheAluno::firstWhere('aluno_id', $id);
+        if (!$aluno) {
+            return back()->with('error', 'Aluno não encontrado');
+        }
         //dd($aluno);
 
         return view('portal-bv128/alunos/show', compact('aluno'));
@@ -47,7 +53,7 @@ class AlunoController extends Controller
         try {
 
             $questionarios = AlunoQuestionarioView::where('aluno_id', (int)$id)->first();
-            if(!$questionarios){
+            if (!$questionarios) {
                 return back()->with('error', 'Aluno não possui questionários');
             }
             return view('portal-bv128/alunos/questionarios', compact('questionarios'));
@@ -63,7 +69,7 @@ class AlunoController extends Controller
                 ->where('id', (int)$id)
                 ->first();
 
-            if(!$questionario){
+            if (!$questionario) {
                 return back();
             }
 
