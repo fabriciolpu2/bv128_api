@@ -14,11 +14,10 @@ class AddDescritorIdToQuestoesTable extends Migration
     public function up()
     {
         Schema::table('questoes', function (Blueprint $table) {
-            $table->unsignedBigInteger('descritor_id')->nullable()->default(null);
+            $table->unsignedBigInteger('descritor_id');
             $table->foreign('descritor_id', 'fk_descritor')
                 ->references('id')
-                ->on('descritores')
-                ->onDelete('null');
+                ->on('descritores');
         });
     }
 
