@@ -13,7 +13,7 @@ class EscolaController extends Controller
     {
         $escolas = $this->cache("escolas-por-versao-$versaoLocal", function () use ($versaoLocal) {
             return Escola::where('versao', '>', $versaoLocal)->get();
-        }, 26 * 60 * 7);
+        });
         return response()->json($escolas);
     }
 
