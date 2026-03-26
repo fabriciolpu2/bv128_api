@@ -10,17 +10,13 @@ class TurmaController extends Controller
 {
     public function listaVersao($versaoLocal)
     {
-        $turmas = $this->cache("turmas-versao-local-$versaoLocal", function () use ($versaoLocal) {
-            return Turma::where('versao', '>', $versaoLocal)->get();
-        });
+        $turmas = Turma::where('versao', '>', $versaoLocal)->get();
         return response()->json($turmas);
     }
 
     public function index()
     {
-        $turmas = $this->cache('todas-as-turmas', function () {
-            return Turma::all();
-        });
+        $turmas = Turma::all();
         return response()->json($turmas);
     }
 

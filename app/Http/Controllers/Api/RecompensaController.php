@@ -12,17 +12,16 @@ class RecompensaController extends Controller
 
     public function index($versao)
     {
-        return $this->cache("todas-as-recompensas-$versao", function () {
-            $recompensas = Recompensas::all();
-            return $recompensas->map(function ($recompensa) {
-                return [
-                    'id' => $recompensa->id,
-                    'tipo' => $recompensa->tipo,
-                    'descricao' => $recompensa->descricao,
-                    'imagem' => $recompensa->imagem,
-                    'valor' => intval($recompensa->valor),
-                ];
-            });
+
+        $recompensas = Recompensas::all();
+        return $recompensas->map(function ($recompensa) {
+            return [
+                'id' => $recompensa->id,
+                'tipo' => $recompensa->tipo,
+                'descricao' => $recompensa->descricao,
+                'imagem' => $recompensa->imagem,
+                'valor' => intval($recompensa->valor),
+            ];
         });
     }
 }

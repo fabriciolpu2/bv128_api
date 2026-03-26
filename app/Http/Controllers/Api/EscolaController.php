@@ -11,17 +11,13 @@ class EscolaController extends Controller
 
     public function listaVersao($versaoLocal)
     {
-        $escolas = $this->cache("escolas-por-versao-$versaoLocal", function () use ($versaoLocal) {
-            return Escola::where('versao', '>', $versaoLocal)->get();
-        });
+        $escolas = Escola::where('versao', '>', $versaoLocal)->get();
         return response()->json($escolas);
     }
 
     public function index()
     {
-        $escolas = $this->cache('todas-as-escolas', function () {
-            return Escola::all();
-        });
+        $escolas = Escola::all();
         return response()->json($escolas);
     }
 
