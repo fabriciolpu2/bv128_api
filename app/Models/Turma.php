@@ -8,8 +8,8 @@ class Turma extends Model
 {
     //
     protected $table = 'turmas';
-    protected $fillable = ['nome', 'escola_id', 'turno', 'professor_id'];
-    
+    protected $fillable = ['nome', 'escola_id', 'turno', 'professor_id', 'serie'];
+
     //public $with = ['escola'];
     public function escola()
     {
