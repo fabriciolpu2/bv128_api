@@ -70,6 +70,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'texto_fluencia_privado' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private/texto_fluencia_aluno'),
+            'visibility' => 'private',
+        ],
+
     ],
 
 ];

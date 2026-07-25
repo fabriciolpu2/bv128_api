@@ -28,11 +28,14 @@ Route::middleware('game')->group(function () {
     Route::get('/alternativas', 'Api\AlternativasQuestoesController@index')->name('lista-alternativas');
     Route::get('/alternativas/{versaoLocal}', 'Api\AlternativasQuestoesController@listaVersao')->name('lista-alternativas-versao');
     Route::get('/recompensas/{versao}', 'Api\RecompensaController@index')->name('lista-recompensas-versao');
+    Route::get('/texto-fluencia', 'Api\TextoFluenciaController@index')->name('lista-texto-fluencia');
 
     Route::get('/versao/{model}', 'Api\ConfiguracaoController@show')->name('versao-model');
     Route::post('/historico', 'Api\AlunoController@historico');
     Route::post('/aluno_respostas', 'Api\AlunoController@alunosQuestoes');
     Route::post('/recompensas_aluno', 'Api\AlunoController@recompensasAluno');
+    Route::post('/texto-fluencia-aluno', 'Api\TextoFluenciaController@store')->name('texto-fluencia-aluno.store');
+    Route::get('/texto-fluencia-aluno/{textoFluenciaAluno}/audio', 'Api\TextoFluenciaController@downloadAudio')->name('texto-fluencia-aluno.audio');
 //post
 
     Route::get('make-history', 'Api\HistoryController');
