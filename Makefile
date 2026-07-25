@@ -157,3 +157,6 @@ deploy:
 	make migrate
 	make cache
 	echo "DEPLOY FINALIZADO!"
+
+ps:
+	docker compose -f ${DOCKER_COMPOSE_FILE} ps
