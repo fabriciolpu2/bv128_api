@@ -24,10 +24,7 @@ class TextoFluenciaController extends Controller
     public function index()
     {
         $textos = TextoFluencia::all();
-        return response()->json([
-            'data' => $textos,
-            'message' => 'sucesso'
-        ], 200);
+        return response()->json($textos, 200);
     }
 
     public function store(StoreTextoFluenciaAlunoRequest $request)
