@@ -13,10 +13,9 @@ class TextoFluenciaService
 
     public function salvarResultado(array $dados, ?UploadedFile $audio): TextoFluenciaAluno
     {
-        if ($audio) {
-            $dados['audio'] = $this->armazenarAudio($audio);
+        if($dados['audio']){
+            $dados['audio'] = '/texto_fluencia_aluno' . '/' . $dados['audio'];
         }
-
         return TextoFluenciaAluno::create($dados);
     }
 
