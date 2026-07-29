@@ -13,6 +13,7 @@ class TextoFluenciaService
 
     public function salvarResultado(array $dados, ?UploadedFile $audio): TextoFluenciaAluno
     {
+        //cria ou atualiza
         return TextoFluenciaAluno::updateOrCreate([
             'aluno_id' => $dados['aluno_id'],
             'texto_fluencia_id' => $dados['texto_fluencia_id'],
