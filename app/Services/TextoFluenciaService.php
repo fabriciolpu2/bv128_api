@@ -13,16 +13,15 @@ class TextoFluenciaService
 
     public function salvarResultado(array $dados, ?UploadedFile $audio): TextoFluenciaAluno
     {
-        if($dados['audio']){
-            $dados['audio'] = '/texto_fluencia_aluno' . '/' . $dados['audio'];
-        }
-        return TextoFluenciaAluno::create($dados);
+        return TextoFluenciaAluno::updateOrCreate([
+            'aluno_id' => $dados['aluno_id'],
+            'texto_fluencia_id' => $dados['texto_fluencia_id'],
+        ], $dados);
     }
 
-    private function armazenarAudio(UploadedFile $audio): string
+    public function armazenarAudio(UploadedFile $audio): string
     {
-        $nomeArquivo = uniqid() . '.' . File::extension($audio->getClientOriginalName());
-
+        $nomeArquivo = $audio->getClientOriginalName();
         return Storage::disk(self::DISCO)->putFileAs('', $audio, $nomeArquivo);
     }
 }

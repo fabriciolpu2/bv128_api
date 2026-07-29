@@ -7,6 +7,7 @@ use App\Http\Requests\Api\StoreTextoFluenciaAlunoRequest;
 use App\Models\TextoFluencia;
 use App\Models\TextoFluenciaAluno;
 use App\Services\TextoFluenciaService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -38,6 +39,26 @@ class TextoFluenciaController extends Controller
 
             return response()->json([
                 'message' => 'sucesso'
+            ]);
+        } catch (\Exception $exception) {
+            Log::error($exception->getMessage());
+            return response()->json([
+                'error' => 'Houve um erro na api'
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public function storeAudio(Request $request)
+    {
+        $request->validate([
+            'audio' => ['required', 'file', 'mimetypes:audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/aac,audio/ogg,audio/mp4,audio/webm', 'max:20480'],
+        ]);
+
+        try {
+            $nomeArquivo = $this->service->armazenarAudio($request->file('audio'));
+
+            return response()->json([
+                'audio' => $nomeArquivo,
             ]);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
