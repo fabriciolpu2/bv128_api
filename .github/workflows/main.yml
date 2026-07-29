@@ -1,0 +1,24 @@
+name: Deploy on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    if: contains(fromJSON('["bugdev304", "fabriciolpu2"]'), github.actor)
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into VPS and run commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /home/cloud/projetos/bv128_api
+            git pull
+            make down
+            make up
+            make migrate
