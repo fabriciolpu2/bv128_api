@@ -8,8 +8,9 @@ class TextoFluenciaAluno extends Model
 {
     protected $table = 'texto_fluencia_aluno';
     const CREATED_AT = null;
+    const UPDATED_AT = null;
     protected $fillable = [
-        'aluno_id', 'texto_fluencia_id', 'nota', 'tempo', 'velocidade', 'palavras_nao_lidas', 'audio'
+        'aluno_id', 'texto_fluencia_id', 'nota', 'tempo', 'velocidade', 'palavras_nao_lidas', 'audio', 'updated_at'
     ];
 
     public function textoFluencia()

@@ -30,13 +30,15 @@ class TextoFluenciaController extends Controller
     public function store(StoreTextoFluenciaAlunoRequest $request)
     {
         try {
-            $dados = Arr::except($request->validated(), 'audio');
-            $registro = $this->service->salvarResultado($dados, $request->file('audio'));
+            $dados = $request->validated();
+            foreach ($dados['Items'] as $dado) {
+                $dado['updated_at'] = $dado['update_at'] ?? null;
+                $this->service->salvarResultado($dado, $request->file('audio'));
+            }
 
             return response()->json([
-                'data' => $registro,
                 'message' => 'sucesso'
-            ], 200);
+            ]);
         } catch (\Exception $exception) {
             Log::error($exception->getMessage());
             return response()->json([

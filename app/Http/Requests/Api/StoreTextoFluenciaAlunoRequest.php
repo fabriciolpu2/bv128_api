@@ -14,13 +14,15 @@ class StoreTextoFluenciaAlunoRequest extends FormRequest
     public function rules()
     {
         return [
-            'aluno_id' => ['required', 'integer', 'exists:pgsql.alunos,id'],
-            'texto_fluencia_id' => ['required', 'integer', 'exists:pgsql.texto_fluencia,id'],
-            'nota' => ['nullable', 'numeric'],
-            'tempo' => ['nullable', 'integer'],
-            'velocidade' => ['nullable', 'numeric'],
-            'palavras_nao_lidas' => ['nullable', 'string'],
-            'audio' => ['nullable', 'file', 'mimetypes:audio/mpeg,audio/mp3,audio/wav,audio/x-wav,audio/aac,audio/ogg,audio/mp4,audio/webm', 'max:20480'],
+            'Items' => ['required', 'array', 'min:1'],
+            'Items.*.aluno_id' => ['required', 'integer', 'exists:pgsql.alunos,id'],
+            'Items.*.texto_fluencia_id' => ['required', 'integer', 'exists:pgsql.texto_fluencia,id'],
+            'Items.*.nota' => ['nullable', 'numeric'],
+            'Items.*.tempo' => ['nullable', 'integer'],
+            'Items.*.velocidade' => ['nullable', 'numeric'],
+            'Items.*.palavras_nao_lidas' => ['nullable', 'string'],
+            'Items.*.audio' => 'nullable|string',
+            "Items.*.update_at" => 'nullable',
         ];
     }
 }
