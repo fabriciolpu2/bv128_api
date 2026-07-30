@@ -101,4 +101,116 @@
         @endif
     </div>
 
+    <div class="row text-center m-t-50">
+        <div class="col-lg-12">
+            <div class="card-box p-4">
+                <h4 class="header-title mb-4" style="font-size: 22px;">
+                    <i class="mdi mdi-book-open-page-variant"></i>
+                    Textos de Fluência
+                </h4>
+
+                @if(count($textosFluencia) > 0)
+                    <div class="table-responsive">
+                        <table class="table table-hover table-centered m-0" style="font-size: 16px;">
+                            <thead>
+                            <tr>
+                                <th class="py-3">Texto</th>
+                                <th class="text-center py-3">Nota</th>
+                                <th class="text-center py-3">Tempo</th>
+                                <th class="text-center py-3">Velocidade</th>
+                                <th class="text-center py-3">Palavras não lidas</th>
+                                <th class="text-center py-3">Áudio</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($textosFluencia as $texto)
+                                @php
+                                    $palavrasNaoLidas = array_filter(array_map('trim', explode(',', (string) $texto->palavras_nao_lidas)));
+                                @endphp
+                                <tr>
+                                    <td class="text-left py-3">
+                                        <i class="mdi mdi-text-box-outline text-muted"></i>
+                                        {{ $texto->textoFluencia->titulo ?? '-' }}
+                                    </td>
+                                    <td class="text-center py-3">
+                                        @if(is_null($texto->nota))
+                                            <span class="text-muted">-</span>
+                                        @else
+                                            <span class="badge badge-{{ $texto->nota >= 8 ? 'success' : ($texto->nota >= 5 ? 'warning' : 'danger') }}" style="font-size: 14px; padding: 6px 12px;">
+                                                {{ $texto->nota }}
+                                            </span>
+                                        @endif
+                                    </td>
+                                    <td class="text-center py-3">
+                                        @if(is_null($texto->tempo))
+                                            <span class="text-muted">-</span>
+                                        @else
+                                            <i class="mdi mdi-timer-outline text-muted"></i>
+                                            {{ $texto->tempo }}
+                                        @endif
+                                    </td>
+                                    <td class="text-center py-3">
+                                        @if(is_null($texto->velocidade))
+                                            <span class="text-muted">-</span>
+                                        @else
+                                            <i class="mdi mdi-speedometer text-muted"></i>
+                                            {{ $texto->velocidade }} ppm
+                                        @endif
+                                    </td>
+                                    <td class="text-center py-3">
+                                        @if(count($palavrasNaoLidas) > 0)
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-palavras-{{ $texto->id }}">
+                                                {{ count($palavrasNaoLidas) }} palavra{{ count($palavrasNaoLidas) > 1 ? 's' : '' }}
+                                            </button>
+
+                                            <div class="modal fade" id="modal-palavras-{{ $texto->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">
+                                                                Palavras não lidas — {{ $texto->textoFluencia->titulo ?? '-' }}
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body text-left">
+                                                            @foreach($palavrasNaoLidas as $palavra)
+                                                                <span class="badge badge-danger mr-1 mb-1" style="font-size: 14px; padding: 6px 12px;">{{ $palavra }}</span>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <span class="badge badge-success" style="font-size: 14px; padding: 6px 12px;">Nenhuma</span>
+                                        @endif
+                                    </td>
+                                    <td class="text-center py-3">
+                                        @if($texto->audio_url)
+                                            <audio controls src="{{ $texto->audio_url }}" style="height: 40px; max-width: 260px;"></audio>
+                                        @else
+                                            <span class="text-muted">-</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @else
+                    <div class="alert alert-dark" role="alert">
+                        <h4 class="alert-heading">
+                            <i class="mdi mdi-timer-sand-empty"></i>
+                            Nenhum texto de fluência respondido
+                        </h4>
+                        <p class="mb-0">
+                            Ao realizar a leitura de textos no BV128 VR, os resultados aparecerão aqui.
+                        </p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+
 @endsection

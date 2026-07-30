@@ -104,6 +104,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'setTheme:admin'], function (
             Route::get('/alunos/{id}', 'AlunoController@show')->name('alunos.show');
             Route::get('/alunos/{id}/questionarios', 'AlunoController@listaQuestionarios')->name('alunos.questionarios');
             Route::get('/alunos/{id}/questionarios/{questionario_id}/respostas', 'AlunoController@questionarios')->name('alunos.questionarios.respostas');
+            Route::get('/textos-fluencia/{textoFluenciaAluno}/audio', 'AlunoController@audioTextoFluencia')->name('textos-fluencia.audio');
             Route::get('/turmas', 'TurmaController@minhasTurmas')->name('minhas-turmas');
             Route::get('/turmas/{turma}/alunos', 'TurmaController@alunos')->name('turmas.alunos');
             Route::get('/questionario/', 'QuestionarioController@questionarios')->name('questionarios.index');

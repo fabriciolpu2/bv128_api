@@ -8,8 +8,10 @@ use App\Models\Aluno;
 use App\Models\AlunoHistorico;
 use App\Models\AlunoRespostas;
 use App\Models\Configuracao;
+use App\Models\TextoFluenciaAluno;
 use App\Models\Views\VwDetalheAluno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 
 class AlunoController extends Controller
@@ -45,7 +47,25 @@ class AlunoController extends Controller
         }
         //dd($aluno);
 
-        return view('portal-bv128/alunos/show', compact('aluno'));
+        $textosFluencia = TextoFluenciaAluno::orderBy('updated_at')->with('textoFluencia')->where('aluno_id', $id)->get();
+
+
+        return view('portal-bv128/alunos/show', compact('aluno', 'textosFluencia'));
+    }
+
+    public function audioTextoFluencia(TextoFluenciaAluno $textoFluenciaAluno)
+    {
+        if (!$textoFluenciaAluno->audio) {
+            return back()->with('error', 'Este registro não possui áudio');
+        }
+
+        $disco = Storage::disk(TextoFluenciaAluno::DISCO);
+
+        if (!$disco->exists($textoFluenciaAluno->audio)) {
+            return back()->with('error', 'Arquivo de áudio não encontrado');
+        }
+
+        return $disco->response($textoFluenciaAluno->audio);
     }
 
     public function listaQuestionarios($id)
